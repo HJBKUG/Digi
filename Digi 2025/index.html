@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digilogous 11.0</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+</head>
+<body>
+  <!-- Background Canvas -->
+  <canvas id="bgCanvas"></canvas>
+  <canvas id="textCanvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <!-- Left Logos -->
+      <div class="d-flex align-items-center gap-3">
+        <img src="assets/images/schlogo.png" alt="School Logo" height="40" />
+        <img src="assets/images/center-logo.png" alt="Event Logo" height="40" />
+      </div>
+      <!-- Right Menu -->
+      <div>
+        <ul class="navbar-nav flex-row gap-3">
+          <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#events">Events</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section text-center">
+    <img src="assets/images/center-logo.png" alt="Central Logo" class="center-logo logo-3d mb-3" />
+    <h2 class="main-heading">K.C. Garg Memorial, Inter School Tech Symposium</h2>
+    <h1 class="digilogous-title">Digilogous 11.0</h1>
+    <h3 class="sub-heading" id="typing"></h3>
+  </section>
+
+  <!-- Memorial Section -->
+  <section class="memorial-section">
+    <div class="memorial-box">
+      <div class="memorial-text">
+        <h2 class="memorial-title">Late Shri K.C. Garg</h2>
+        <p class="memorial-description">
+          Founder Trustee and President Seth Pokhar Mal Educational Society<br>
+          He was the founder of the Seth Pokhar Mal Educational Society, a distinguished educator, a doyen of school education and the mind behind the creation and establishment of several institutes of repute under the brand name "Rukmini Devi."
+        </p>
+      </div>
+      <div class="memorial-image-container">
+        <img src="assets/images/sir.png" alt="Portrait of Late Shri K.C. Garg" class="memorial-image" />
+      </div>
+    </div>
+  </section>
+
+<section class="memorial-section" id="champions">
+  <div class="memorial-box flex-column align-items-center text-center">
+    <h2 class="memorial-title mb-4">Tech Champions</h2>
+    <div class="champions-rows">
+      <div class="champions-row top-row">
+        <img src="assets/images/1.png" alt="Champion 1">
+        <img src="assets/images/2.png" alt="Champion 2">
+        <img src="assets/images/3.png" alt="Champion 3">
+      </div>
+      <div class="champions-row bottom-row">
+        <img src="assets/images/4.png" alt="Champion 4">
+        <img src="assets/images/5.png" alt="Champion 5">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="memorial-section" id="champions">
+  <div class="memorial-box flex-column align-items-center text-center">
+    <h2 class="memorial-title mb-4">DISTINGUISHED GUESTS</h2>
+    <div class="champions-rows">
+      <div class="champions-row top-row">
+        <img src="assets/images/q1.jpeg" alt="Champion 1">
+        <img src="assets/images/q2.jpg" alt="Champion 2">
+        <img src="assets/images/q3.jpg" alt="Champion 3">
+      </div>
+      <div class="champions-row bottom-row">
+        <img src="assets/images/q4.jpg" alt="Champion 4">
+        <img src="assets/images/q5.jpg" alt="Champion 5">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section with Parallax -->
+<section id="about" class="about-section">
+  <div class="parallax-bg"></div>
+  <div class="about-content container text-white">
+    <h2 class="text-center mb-4" style="color: #00ffff;">ABOUT US</h2>
+    <p>
+      We believe that artificial intelligence (AI) has the potential to transform the world and enhance our quality of life.
+      AI has revolutionized how we live, work, and connect, driving innovation across various sectors. To celebrate the incredible advancements in AI
+      and promote its application in fields such as Science, Agriculture, Defence, and Entertainment, we are thrilled to announce the Annual Inter School Tech Symposium: Digilogous 10.0.
+      Since its inception in 2014, this event has been a platform for young minds to showcase their skills and creativity.
+      Join us on Saturday, August 3, 2024, for the tenth edition of this inspiring IT competition.
+    </p>
+  </div>
+</section>
+
+<!-- General Instructions Section -->
+<section id="instructions" class="instructions-section">
+  <div class="instruction-card">
+    <div class="icon-circle">i</div>
+    <h2 class="instruction-title">General Instructions</h2>
+    <a href="assets/general-instructions.pdf" target="_blank" class="instruction-btn">Details</a>
+  </div>
+</section>
+
+
+
+
+  <!-- Scripts -->
+  <script src="assets/js/background.js"></script>
+  <script src="assets/js/typing.js"></script>
+  <script src="assets/js/logo-tilt.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
