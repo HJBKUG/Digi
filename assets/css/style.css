@@ -43,6 +43,18 @@ body::-webkit-scrollbar-thumb {
   padding: 0.6rem 1.2rem;
   z-index: 1000;
 }
+.navbar-toggler {
+  position: relative;
+  z-index: 1051;
+}
+.navbar-close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
 
 /* Hero Section */
 .hero-section {

@@ -19,7 +19,7 @@
   <canvas id="textCanvas"></canvas>
 
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
   <div class="container-fluid">
     <!-- Logos -->
     <div class="d-flex align-items-center gap-3">
@@ -31,16 +31,19 @@
       </a>
     </div>
 
-    <!-- Toggler -->
-    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      <span class="navbar-close-icon d-none" style="font-size: 1.5rem; color: white;">&times;</span>
+    <!-- Toggler Button -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <!-- Hamburger Icon -->
+      <span class="navbar-toggler-icon menu-icon"></span>
+      <!-- Cross Icon -->
+      <span class="close-icon d-none" style="font-size: 1.8rem; color: white;">&times;</span>
     </button>
 
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav gap-3 text-center">
+    <!-- Navbar Items -->
+    <div class="collapse navbar-collapse justify-content-end text-center" id="navbarContent">
+      <ul class="navbar-nav gap-3">
         <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="events.html">Events</a></li>
@@ -50,8 +53,6 @@
     </div>
   </div>
 </nav>
-
-
 
   <!-- Hero Section -->
   <section id="home" class="hero-section text-center">
@@ -330,32 +331,62 @@
     </div>
   </section>
 
- <!---------------------------------------------------------------------------------------
+  <!---------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
                                     Footer Start
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------>
-                <footer>
-                    <div class="wave wave1">
-                        <div class="footer-content">
-                            <p>
-                                Copyright &#169; Rukmini Devi Public School, Pitampura
-                                <br>
-                                Developed By : Harman Singh Jassal & Arjan Singh Jassal
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wave wave2"></div>
-                    <div class="wave wave3"></div>
-                    <div class="wave wave4"></div>
-                </footer>
-                <!---------------------------------------------------------------------------------------
+  <footer>
+    <div class="wave wave1">
+      <div class="footer-content">
+        <p>
+          Copyright &#169; Rukmini Devi Public School, Pitampura
+          <br>
+          Developed By : Harman Singh Jassal & Arjan Singh Jassal
+        </p>
+      </div>
+    </div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+  </footer>
+  <!---------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
                                     Footer End
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------>
 
   <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggler = document.querySelector(".navbar-toggler");
+      const menuIcon = document.querySelector(".menu-icon");
+      const closeIcon = document.querySelector(".close-icon");
+      const navbarCollapse = document.getElementById("navbarContent");
+
+      // When collapse is shown
+      navbarCollapse.addEventListener("show.bs.collapse", function () {
+        menuIcon.classList.add("d-none");
+        closeIcon.classList.remove("d-none");
+      });
+
+      // When collapse is hidden
+      navbarCollapse.addEventListener("hide.bs.collapse", function () {
+        closeIcon.classList.add("d-none");
+        menuIcon.classList.remove("d-none");
+      });
+
+      // Auto-close menu on nav link click (for mobile)
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse && navbarCollapse.classList.contains("show")) {
+            bsCollapse.hide();
+          }
+        });
+      });
+    });
+  </script>
   <script src="assets/js/background.js"></script>
   <script src="assets/js/typing.js"></script>
   <script src="assets/js/logo-tilt.js"></script>
