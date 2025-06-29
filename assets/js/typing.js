@@ -11,3 +11,14 @@ function typeText() {
 }
 
 window.addEventListener("load", typeText);
+const cards = document.querySelectorAll('.event-card');
+cards.forEach(card => {
+  card.addEventListener('mouseover', () => {
+    const img = card.querySelector('img');
+    img.style.filter = 'brightness(1.1)';
+  });
+  card.addEventListener('mouseout', () => {
+    const img = card.querySelector('img');
+    img.style.filter = 'brightness(1)';
+  });
+});

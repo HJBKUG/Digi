@@ -1,343 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Digilogous</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/css/events.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
+
 <body>
+
+  <!-- Background Canvas -->
+  <canvas id="bgCanvas"></canvas>
+  <canvas id="textCanvas"></canvas>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center gap-3">
         <a href="https://rdpschool.edu.in/">
-          <img src="assets/images/schlogo.png" alt="School Logo" height="40" />
-        </a>
+        <img src="assets/images/schlogo.png" alt="School Logo" height="40" /></a>
         <a href="index.html"><img src="assets/images/center-logo.png" alt="Event Logo" height="40" /></a>
       </div>
       <ul class="navbar-nav flex-row gap-3">
         <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="events.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="index.html#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#team">Team</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
       </ul>
     </div>
-  </nav>  
+  </nav>
 
-  <canvas id="background-canvas"></canvas>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section text-center">
+    <img src="assets/images/center-logo.png" alt="Central Logo" class="center-logo logo-3d mb-3" />
+    <h2 class="main-heading">K.C. Garg Memorial, Inter School Tech Symposium</h2>
+    <h1 class="digilogous-title">Digilogous 11.0</h1>
+    <h3 class="sub-heading" id="typing"></h3>
+  </section>
 
-  <section class="events-section py-5">
-    <div class="container">
-      <h2 class="text-center text-glow mb-5">Events</h2>
-      <div class="row justify-content-center g-4">
-
-        <!-- Event Card 1 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/aveditevent.png" alt="Hackathon" class="event-img" />
-            <h5 class="event-title">Robo Wars</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event1Modal">View Details</button>
-          </div>
-        </div>
-
-        <!-- Event Card 2 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/blank.png" alt="Gaming Battle" class="event-img" />
-            <h5 class="event-title">ImpactX: STEM Innovation</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event2Modal">View Details</button>
-          </div>
-        </div>
-
-        <!-- Event Card 3 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/cs.JPG" alt="Design Thinking Sprint" class="event-img" />
-            <h5 class="event-title">Design Thinking Sprint</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event3Modal">View Details</button>
-          </div>
-        </div>
-
-        <!-- Event Card 4 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/cubing.png" alt="AI For Good" class="event-img" />
-            <h5 class="event-title">AI For Good</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event4Modal">View Details</button>
-          </div>
-        </div>
-
-        <!-- Event Card 5 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/dd.JPG" alt="Design Dynamos" class="event-img" />
-            <h5 class="event-title">Design Dynamos: Web Edition</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event5Modal">View Details</button>
-          </div>
-        </div>
-
-        <!-- Event Card 6 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/dd.JPG" alt="Visual Pitch" class="event-img" />
-            <h5 class="event-title">Visual Pitch - Photography Contest</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event6Modal">View Details</button>
-          </div>
-        </div>
-
-        <!-- Other Event Cards... (similar structure for remaining events, omitted here for brevity) -->
-
-        <!-- Event Card 13 -->
-        <div class="col-md-4">
-          <div class="event-card" data-tilt>
-            <div class="glow-border"></div>
-            <img src="assets/images/events/dd.JPG" alt="Console Clash" class="event-img" />
-            <h5 class="event-title">Console Clash</h5>
-            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#modal-console-clash">View Details</button>
-          </div>
-        </div>
-
+  <!-- Memorial Section -->
+  <section class="memorial-section">
+    <div class="memorial-box">
+      <div class="memorial-text">
+        <h2 class="memorial-title">Late Shri K.C. Garg</h2>
+        <p class="memorial-description">
+          Founder Trustee and President Seth Pokhar Mal Educational Society<br>
+          He was the founder of the Seth Pokhar Mal Educational Society, a distinguished educator, a doyen of school
+          education and the mind behind the creation and establishment of several institutes of repute under the brand
+          name "Rukmini Devi."
+        </p>
+      </div>
+      <div class="memorial-image-container">
+        <img src="assets/images/sir.png" alt="Portrait of Late Shri K.C. Garg" class="memorial-image" />
       </div>
     </div>
   </section>
 
-  <!-- Event 1 Modal -->
-  <div class="modal fade" id="event1Modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Hackathon</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          Solve real-world problems through innovation and collaboration in a 12-hour coding marathon.
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Event 2 Modal -->
-  <div class="modal fade" id="event2Modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Gaming Battle</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <!-- Tech Champions Section -->
+  <section id="champions">
+    <div class="champions-container text-center">
+      <h2 class="memorial-title mb-4">Tech Champions</h2>
+      <div class="champions-rows">
+        <div class="champions-row top-row">
+          <img src="assets/images/1.png" alt="Champion 1">
+          <img src="assets/images/2.png" alt="Champion 2">
+          <img src="assets/images/3.png" alt="Champion 3">
         </div>
-        <div class="modal-body">
-          Team up and face off in a fierce multiplayer gaming tournament filled with action and prizes.
+        <div class="champions-row bottom-row">
+          <img src="assets/images/4.png" alt="Champion 4">
+          <img src="assets/images/5.png" alt="Champion 5">
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Event 3 Modal -->
-  <div class="modal fade" id="event3Modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Design Thinking Sprint</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <!-- Guests Section -->
+  <section class="memorial-section">
+    <div class="champions-container text-center">
+      <h2 class="memorial-title mb-4">Distinguished Guests</h2>
+      <div class="champions-rows">
+        <div class="champions-row top-row">
+          <img src="assets/images/q1.jpeg" alt="Guest 1">
+          <img src="assets/images/q2.jpg" alt="Guest 2">
+          <img src="assets/images/q3.jpg" alt="Guest 3">
         </div>
-        <div class="modal-body" style="white-space: pre-line;">
-Event 3 • Design Thinking Sprint  
-Offline Event | Grade IX to XII  
-Team Size: 4 Participants  
-Max Teams allowed per School: 2 Teams  
-
-Get ready to unleash your creativity in this fast-paced Design Thinking Sprint! Participants will dive into real-world challenges, ideate bold solutions, and build rapid prototypes using tools like Canva, Miro, and PowerPoint. This hands-on sprint is about thinking differently, moving fast, and turning big ideas into real, user-focused designs.
-
-General Instructions:  
-• Each team will receive a surprise problem statement at the start of the event.  
-• Devices (laptops/tablets/phones) must be brought by participants, along with a stable internet connection.  
-• Teams will have 60–90 minutes to brainstorm, design, and build their prototype.  
-• Each team will deliver a 1.5-minute pitch to present their solution to the judges.  
-• Use of AI tools (like ChatGPT, Gemini, etc.) for ideation, problem-solving, or content generation is strictly prohibited. Violation may result in disqualification.  
-The final decision of the judges and organizing committee is absolute, binding, and non-negotiable.
-
-Judgement Criteria:  
-• Innovation and Creativity - 25 pts  
-• User-Centric Approach - 25 pts  
-• Prototype Clarity and Execution - 25 pts  
-• Pitch and Communication - 25 pts  
-
-Contact:  
-ANSHIKA BANSAL  
-+91 7011737383
+        <div class="champions-row bottom-row">
+          <img src="assets/images/q4.jpg" alt="Guest 4">
+          <img src="assets/images/q5.jpg" alt="Guest 5">
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Event 4 Modal -->
-  <div class="modal fade" id="event4Modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">AI For Good</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="parallax-bg"></div>
+    <div class="about-content container text-white">
+      <h2 class="text-center mb-4 section-title">About Us</h2>
+      <p>
+        We believe that artificial intelligence (AI) has the potential to transform the world and enhance our quality of
+        life. AI has revolutionized how we live, work, and connect, driving innovation across various sectors. To
+        celebrate
+        the incredible advancements in AI and promote its application in fields such as Science, Agriculture, Defence,
+        and
+        Entertainment, we are thrilled to announce the Annual Inter School Tech Symposium: Digilogous 11.0.
+      </p>
+      <p>
+        Since its inception in 2014, this event has been a platform for young minds to showcase their skills and
+        creativity.
+        Join us on Saturday, August 2, 2025, for the tenth edition of this inspiring IT competition.
+      </p>
+    </div>
+  </section>
+
+  <!-- Instructions Section -->
+  <section id="instructions" class="instructions-section">
+    <div class="instruction-card">
+      <div class="icon-circle">i</div>
+      <h2 class="instruction-title">General Instructions</h2>
+      <a href="assets/general-instructions.pdf" target="_blank" class="instruction-btn">Details</a>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team-section text-center">
+    <h2 class="team-title">DIGILOGOUS 11.0 Core Team</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/devansh bansal.jpeg" alt="Team Member 1" />
+            <div class="team-name">Devansh Bansal</div>
+          </div>
         </div>
-        <div class="modal-body" style="white-space: pre-line;">
-Event 4 • AI for Good  
-Offline Event: Prompting With Purpose  
-Grade: VI-XII | Team Size: Individual  
-Max Teams allowed per School: 1 Team  
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/aahan arora.jpeg" alt="Team Member 2" />
+            <div class="team-name">Aahaan Arora</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/akshara.png" alt="Team Member 3" />
+            <div class="team-name">Akshara</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/anshika bansal xi a .png" alt="Team Member 4" />
+            <div class="team-name">Anshika Bansal</div>
+          </div>
+        </div>
 
-‘AI for Good Impact’ is a forward-thinking event where students become changemakers by tackling real-world societal challenges. Participants will show their creative and precise prompt engineering skills to guide AI towards producing meaningful, socially responsible outputs aligned with the theme: AI for Good.
-
-General Instructions:  
-• Participants are given a base prompt and the output generated from it. They must analyze the limitations of the output and then refine the original prompt based on a refinement goal.  
-• The objective is to iteratively craft a better prompt that leads AI to generate a more appropriate, impactful, or creatively aligned response.  
-• They will be given two refinement goals for the base AI output and are required to develop a suitable prompt within a particular time limit (15 minutes) for each goal.  
-• After submission of the AI chat link, they will be given 10 minutes to develop reasons behind their prompt and changes they made. They will present their reasoning.  
-• Participant must bring their own device with an internet connection (BYOD).  
-• Time Duration: 30 minutes for creating the pitch.
-
-Judgement:  
-• Prompt Clarity & Precision: 30 pts  
-• Creativity & Innovation: 20 pts  
-• Alignment with Refinement Challenge: 30 pts  
-• Prompt Engineering Rationale: 20 pts  
-
-Contact:  
-SAMBHAV TONGARIA  
-+91 8595888329
+        <!-- Next row -->
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/mishti goyal.jpeg" alt="Team Member 5" />
+            <div class="team-name">Mishti Goyal</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/sambhav.jpg" alt="Team Member 8" />
+            <div class="team-name">Sambhav Tongaria</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/taarini.png" alt="Team Member 8" />
+            <div class="team-name">Taarini Dhingra</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/core/Yashvi_bansal_xi_a.png" alt="Team Member 8" />
+            <div class="team-name">Yashvi Bansal</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Event 5 Modal -->
-  <div class="modal fade" id="event5Modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Design Dynamos: Web Edition</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  </section>
+  <!-- Team Section -->
+  <section id="team" class="team-section text-center">
+    <h2 class="team-title">DIGILOGOUS 11.0 ALUMINI TEAM</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/al/al-1.png" alt="Team Member 1" />
+            <div class="team-name">Arjan Singh Jassal</div>
+          </div>
         </div>
-        <div class="modal-body" style="white-space: pre-line;">
-Event 5  
-Design Dynamos: Web Edition  
-Offline Event: Website Designing  
-Grades VII-VIII | Team Size: Individual  
-Max Teams allowed per School: 2 Teams  
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/al/al-3.png" alt="Team Member 3" />
+            <div class="team-name">Pratha Dhingra</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/al/al-4.png" alt="Team Member 4" />
+            <div class="team-name">Shirish Kumar Saini</div>
+          </div>
+        </div>
 
-Unleash your creativity and technical skills in Webpage Creation! This exciting event challenges students to design and develop a fully functional, visually appealing, and user-friendly webpage based on a given theme. Participants showcase their talent using modern web development platforms.
-
-General Instructions:  
-• The theme or topic for the webpage will be provided at the beginning of the competition.  
-• All webpage content should be relevant and appropriate to the given theme.  
-• The total duration of the event is 1 hour.  
-• Participants must submit their final project within the allotted time.  
-• Use of pre-built templates or AI-generated content is discouraged.  
-• Software allowed: HTML, JavaScript, CSS.  
-• Failure to adhere to tool restrictions or time limits may lead to disqualification.
-
-Judgement Criteria:  
-• Creativity and Design: 25 pts  
-• Functionality and Responsiveness: 25 pts  
-• Code Structure and Cleanliness: 25 pts  
-• Overall User Experience: 25 pts  
-
-Contact:  
-YASHVI BANSAL  
-+91 9315236889
+        <!-- Next row -->
+        <div class="col-sm-6 col-md-3 mb-4 d-flex justify-content-center">
+          <div class="team-card">
+            <img src="assets/images/team/al/al-6.png" alt="Team Member 8" />
+            <div class="team-name">Bhavy Garg</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Event 6 Modal -->
-  <div class="modal fade" id="event6Modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Visual Pitch - Photography Meets Marketing Innovation</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <section id="gallery" class="py-5 gallery-section">
+    <div class="container text-center">
+      <h2 class="text-white mb-5">
+        <i class="bi bi-images"></i> <em>Gallery</em>
+      </h2>
+
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="gallery-card mx-auto tilt">
+              <img src="assets/images/KKAggarwal.png" class="gallery-img" alt="Gallery Image 1">
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="gallery-card mx-auto tilt">
+              <img src="assets/images/Bala.png" class="gallery-img" alt="Gallery Image 2">
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="gallery-card mx-auto tilt">
+              <img src="assets/images/Palak.png" class="gallery-img" alt="Gallery Image 3">
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="gallery-card mx-auto tilt">
+              <img src="assets/images/Ramjass.png" class="gallery-img" alt="Gallery Image 4">
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="gallery-card mx-auto tilt">
+              <img src="assets/images/tareque.png" class="gallery-img" alt="Gallery Image 5">
+            </div>
+          </div>
+
         </div>
-        <div class="modal-body" style="white-space: pre-line;">
-Event 6  
-Visual Pitch  
-Photography Meets Marketing Innovation  
-Grade: —  
-Team Size: 2 Participants  
-Max Teams allowed per School: 2 Teams  
 
-Round 2  
+        <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#galleryCarousel"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#galleryCarousel"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
 
-• Participants are required to bring their own camera and laptop with an internet connection.  
-• Participants are encouraged to utilize DSLR or semi-professional cameras for photography. No mobile photography is allowed.  
-• Devices should be properly guarded; the host school is not responsible for the safety of devices.  
-• Students are to take creative photographs highlighting the product or concept innovatively. After capturing the photo, students will create a still advertisement using design software. This could include text overlays, graphic design, and more.  
-• Carrying your own props is not allowed.  
-• AI-generated images, ads, or designs are strictly prohibited. Use of such content may lead to disqualification.  
-• All content (photo + design) must be original and created during the event.  
-• The final decision of judges and organizing committee is absolute, binding, and non-negotiable.
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section py-5">
+    <div class="container">
+      <div class="contact-box rounded-4 p-4">
+        <h2 class="text-center text-cyan mb-4">CONTACT US</h2>
+        <hr class="section-divider">
 
-Judgement Criteria:  
-• Creativity and Originality: 30 pts  
-• Visual and Technical Quality: 25 pts  
-• Ad Design and Message Clarity: 25 pts  
-• Relevance and Presentation: 20 pts  
+        <div class="row">
+          <!-- Map -->
+          <div class="col-md-7 mb-4 mb-md-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5108057076536!2d77.1361252150379!3d28.704276782389602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03d8090d54f3%3A0xa598ce7d1ac48b94!2sRukmini%20Devi%20Public%20School!5e0!3m2!1sen!2sin!4v1626359454875!5m2!1sen!2sin"
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
 
-Contact:  
-SAMBHAV TONGARIA  
-+91 8595889329
+          <!-- Contact Details -->
+          <div class="col-md-5 d-flex align-items-center">
+            <div class="contact-info text-center w-100">
+              <p><i class="bi bi-globe"></i><br> <strong>School Website</strong><br> <a
+                  href="https://www.rdpschool.edu.in" target="_blank" class="text-dark">www.rdpschool.edu.in</a></p>
+              <p><i class="bi bi-envelope-fill"></i><br> digilogous@rdpschool.edu.in</p>
+              <p><i class="bi bi-telephone-fill"></i><br> +91-9667433774</p>
+              <p><i class="bi bi-geo-alt-fill"></i><br> RUKMINI DEVI PUBLIC SCHOOL<br> CD BLOCK PITAMPURA, DELHI -
+                110034</p>
+              <p class="mt-3">Follow us on<br>
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Event 13 Modal - Console Clash -->
-  <div class="modal fade" id="modal-console-clash" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content glass-modal text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Console Clash</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body" style="white-space: pre-line; font-size: 0.95rem; line-height: 1.4;">
-Event 13  
-Console Clash  
-Offline Event: Gaming Tournament  
-Grades: to  
-Team Size: Individual  
-Max Teams allowed per School: 2 Teams  
+ <!---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+                                    Footer Start
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------>
+                <footer>
+                    <div class="wave wave1">
+                        <div class="footer-content">
+                            <p>
+                                Copyright &#169; Rukmini Devi Public School, Pitampura
+                                <br>
+                                Developed By : Harman Singh Jassal & Arjan Singh Jassal
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wave wave2"></div>
+                    <div class="wave wave3"></div>
+                    <div class="wave wave4"></div>
+                </footer>
+                <!---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+                                    Footer End
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------>
 
-Level up Your Skills — It's Game Time on the Esports!  
-Competitive eSports event featuring popular games. The registered participants will be grouped into brackets, engaging in matches where only one winner emerges from each game. With each match, the intensity rises as contestants vie for victory, culminating in the crowning of the ultimate champion.  
-
-General Instructions:  
-• Participants must exhibit good sportsmanship throughout the event.  
-• Respectful behaviour towards opponents, referees, organizers, and equipment is expected.  
-• Any disruptive or disrespectful behaviour may result in penalties or disqualification.  
-• A maximum of 2 individual participants will be allowed from each school.  
-• Ready-made brackets will not be changed, and no other game choice will be allowed.  
-
-Judgement Criteria:  
-• Clearing all the Stages  
-
-Contact:  
-AHAAN ARORA  
-+91 7982169099
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Add more event modals here as needed -->
-
+  <!-- Scripts -->
+  <script src="assets/js/background.js"></script>
+  <script src="assets/js/typing.js"></script>
+  <script src="assets/js/logo-tilt.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/tilt.js"></script>
 </body>
+
 </html>
