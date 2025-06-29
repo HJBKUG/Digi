@@ -271,13 +271,13 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   position: relative;
   z-index: 1;
 }
 
 .team-card {
-  width: 200px;
+  width: 220px;
   background-color: #111a30;
   border: 2px solid #ffffff20;
   border-radius: 16px;
@@ -309,8 +309,8 @@ body::-webkit-scrollbar-thumb {
 .team-card img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 12px;
-  border: 2px solid #ffffff22;
+  /* margin-bottom: 12px; */
+  border: 1px solid #ffffff22;
   position: relative;
   z-index: 1;
 }
@@ -318,8 +318,9 @@ body::-webkit-scrollbar-thumb {
 .team-name {
   color: #ffffff;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
+  padding-top: 20px;
   position: relative;
   z-index: 1;
 }

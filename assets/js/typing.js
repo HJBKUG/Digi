@@ -1,4 +1,4 @@
-const typingText = "Saturday, August 3, 2024";
+const typingText = "Saturday, August 2, 2025";
 const subHeading = document.querySelector(".sub-heading");
 let i = 0;
 
