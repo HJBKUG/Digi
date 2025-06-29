@@ -37,7 +37,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Navbar */
 .custom-navbar {
-  background-color: rgba(0, 5, 71, 0.5);
+  background-color: rgba(0, 4, 65, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   padding: 0.6rem 1.2rem;

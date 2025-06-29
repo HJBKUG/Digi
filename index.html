@@ -19,37 +19,37 @@
   <canvas id="textCanvas"></canvas>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <!-- Logo Section -->
-      <div class="d-flex align-items-center gap-3">
-        <a href="https://rdpschool.edu.in/">
-          <img src="assets/images/schlogo.png" alt="School Logo" height="40" />
-        </a>
-        <a href="index.html">
-          <img src="assets/images/center-logo.png" alt="Event Logo" height="40" />
-        </a>
-      </div>
-
-      <!-- Toggler -->
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon menu-icon"></span>
-        <span class="close-icon d-none" style="font-size: 1.5rem; color: white;">&times;</span>
-      </button>
-
-      <!-- Collapsible Menu -->
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#team">Team</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-expand-lg custom-navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <!-- Left Logos -->
+    <div class="d-flex align-items-center gap-3">
+      <a href="https://rdpschool.edu.in/">
+        <img src="assets/images/schlogo.png" alt="School Logo" height="40">
+      </a>
+      <a href="index.html">
+        <img src="assets/images/center-logo.png" alt="Event Logo" height="40">
+      </a>
     </div>
-  </nav>
+
+    <!-- Toggler Button -->
+    <button class="navbar-toggler border-0" type="button" id="navbarToggleBtn">
+      <span class="navbar-toggler-icon menu-icon"></span>
+      <span class="close-icon d-none" style="font-size: 1.5rem; color: white;">&times;</span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 
   <!-- Hero Section -->
@@ -356,46 +356,44 @@
 
   <!-- Scripts -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggler = document.querySelector(".navbar-toggler");
-      const menuIcon = toggler.querySelector(".menu-icon");
-      const closeIcon = toggler.querySelector(".close-icon");
-      const navbarCollapse = document.getElementById("navbarContent");
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggler = document.getElementById("navbarToggleBtn");
+    const menuIcon = toggler.querySelector(".menu-icon");
+    const closeIcon = toggler.querySelector(".close-icon");
+    const navbarCollapse = document.getElementById("navbarNav");
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
 
-      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-        toggle: false
-      });
+    // Toggle logic
+    toggler.addEventListener("click", () => {
+      if (navbarCollapse.classList.contains("show")) {
+        bsCollapse.hide();
+      } else {
+        bsCollapse.show();
+      }
+    });
 
-      // When toggler is clicked
-      toggler.addEventListener("click", function () {
+    // Switch icons
+    navbarCollapse.addEventListener("show.bs.collapse", () => {
+      menuIcon.classList.add("d-none");
+      closeIcon.classList.remove("d-none");
+    });
+
+    navbarCollapse.addEventListener("hide.bs.collapse", () => {
+      closeIcon.classList.add("d-none");
+      menuIcon.classList.remove("d-none");
+    });
+
+    // Close menu on link click (mobile only)
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
         if (navbarCollapse.classList.contains("show")) {
           bsCollapse.hide();
-        } else {
-          bsCollapse.show();
         }
       });
-
-      // Toggle icons based on collapse events
-      navbarCollapse.addEventListener("show.bs.collapse", () => {
-        menuIcon.classList.add("d-none");
-        closeIcon.classList.remove("d-none");
-      });
-
-      navbarCollapse.addEventListener("hide.bs.collapse", () => {
-        closeIcon.classList.add("d-none");
-        menuIcon.classList.remove("d-none");
-      });
-
-      // Hide menu on nav-link click (mobile only)
-      document.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", () => {
-          if (navbarCollapse.classList.contains("show")) {
-            bsCollapse.hide();
-          }
-        });
-      });
     });
-  </script>
+  });
+</script>
+
   <style>
     .close-icon {
       cursor: pointer;
