@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Digilogous</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/events.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <a href="https://rdpschool.edu.in/">
+          <img src="assets/images/schlogo.png" alt="School Logo" height="40" /></a>
+        <a href="index.html"><img src="assets/images/center-logo.png" alt="Event Logo" height="40" /></a>
+      </div>
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <canvas id="background-canvas"></canvas>
+  <!-- Floating circles + main content follow -->
+
+  <section class="events-section py-5 mt-5">
+    <div class="container">
+      <h2 class="text-center text-glow mb-5">Events</h2>
+      <div class="row justify-content-center gx-3 gy-3">
+        <!-- Event Card 1 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/RoboWar.png" alt="Hackathon" class="event-img" />
+            <h5 class="event-title">Robo Wars</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event1Modal">View Details</button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/ImpactX.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">ImpactX: STEM Innovation</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event2Modal">View Details</button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/DesignThinking.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Design Thinking Sprint</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event3Modal">View Details</button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/AIForGood.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">AI For Good</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event4Modal">View Details</button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/DesignDynamos.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Design Dynamos: Web Edition</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event5Modal">View Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/VisualPitch.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Visual Pitch - Photography Contest</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event6Modal">View Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/AdMadness.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Ad Madness: Motion Design</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event7Modal">View Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/Encipher.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Encipher-Python Programming</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event8Modal">View Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/TechTussle.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Tech Tussle</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event9Modal">View Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/ExcelWarriors.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Excel Warriors</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event10Modal">View
+              Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/ITMonologue.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">IT Monologue</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event11Modal">View
+              Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/Cubetron.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Cubetron</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event12Modal">View
+              Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/ConsoleClash.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Console Clash</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event13Modal">View
+              Details</button>
+          </div>
+        </div>
+        <!-- Event Card 2 -->
+        <div class="col-md-4">
+          <div class="event-card" data-tilt>
+            <div class="glow-border"></div>
+            <img src="assets/images/events/MustryTrail.png" alt="Gaming Battle" class="event-img" />
+            <h5 class="event-title">Mystery Trail</h5>
+            <button class="btn btn-glow mt-2" data-bs-toggle="modal" data-bs-target="#event14Modal">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event 1 Modal -->
+  <div class="modal fade" id="event1Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Robo Wars</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="max-height: 80vh; overflow: hidden;">
+          <!-- Left Column -->
+          <div class="sticky-left col-md-4 d-flex flex-column align-items-center text-center border-end pe-3">
+            <img src="assets/images/events/RoboWar.png" alt="Robo Wars Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Robo Wars</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Event</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">VI to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Max 3 Participants</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="col-md-8 ps-4" style="max-height: 70vh; overflow-y: scroll;">
+            <p class="fs-5">
+              Witness a high-octane clash of creativity, coding, and control in <strong>ROBO WARS: Clash Of
+                Circuits!</strong><br><br>
+              In this thrilling robotics showdown, students will design, build, and battle robots using Avishkaar
+              Robotics Kits.
+              Each team will enter the arena with a custom-built bot, ready to navigate challenges, outmaneuver
+              opponents,
+              and survive intense head-to-head battles.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>The bots must be controlled using wired or wireless controllers provided in the kits.</li>
+              <li>Battles will take place in a structured arena with obstacles and combat zones.</li>
+              <li>Each match will be time-bound, and bots will compete until one is immobilized or the timer ends.</li>
+              <li>Teams must demonstrate basic knowledge of their robot's design, functioning, and strategy during
+                inspection.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Presentation: 30 pts</li>
+              <li>Research: 30 pts</li>
+              <li>Creativity: 40 pts</li>
+              <li>Content Relevance and Clarity: 20 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              DEVANSH BANSAL<br>
+              +91 9315566296
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 2 Modal -->
+  <div class="modal fade" id="event2Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">ImpactX: STEM Innovation</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/ImpactX.png" alt="ImpactX STEM Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">ImpactX: STEM Innovation</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Event</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">V to VIII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Max 3 Participants</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              A creativity-driven event where students are encouraged to use STEM kits to design and present
+              innovative models addressing real-life issues. From clean energy to sustainable transportation and
+              smart waste management, young minds will turn bold ideas into functional models that tackle pressing
+              global challenges. It's where imagination meets impact.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>A maximum of 3 students are allowed in a team from each school.</li>
+              <li>Models must be constructed beforehand and brought to the venue.</li>
+              <li>A presentation will also be prepared by the participating team, covering the aim, functionality,
+                innovation involved, and a real-life use case of the STEM project.</li>
+              <li>Only one model can be submitted per school.</li>
+              <li>Each team will be provided with a table and power supply to display their model.</li>
+              <li>All team members should be able to explain their working model and present to the judges.</li>
+              <li>Judges may ask questions; all team members should be able to respond.</li>
+              <li>Total presentation time should not exceed 5 minutes.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Presentation of Project: 20 pts</li>
+              <li>Function and Practicality: 40 pts</li>
+              <li>Creativity & Innovation: 40 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              AKSHARA AGGARWAL<br>
+              +91 8595928453
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Event 3 Modal -->
+  <div class="modal fade" id="event3Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Design Thinking Sprint</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/DesignThinking.png" alt="Design Thinking Sprint Logo"
+              class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Design Thinking Sprint</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Event</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">IX to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">2 Participants</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              Get ready to unleash your creativity in this fast-paced <strong>Design Thinking Sprint</strong>!<br>
+              Participants will dive into real-world challenges, ideate bold solutions, and build rapid prototypes using
+              tools like <strong>Canva</strong>, <strong>Miro</strong>, and <strong>PowerPoint</strong>.
+              This hands-on sprint is all about thinking differently, moving fast, and turning big ideas into real,
+              user-focused designs.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>Each team will receive a surprise problem statement at the start of the event.</li>
+              <li>Devices (laptops/tablets/phones) must be brought by participants, along with stable internet access.
+              </li>
+              <li>Teams will have 60–90 minutes to brainstorm, design, and build their prototype.</li>
+              <li>Each team will deliver a 1.5-minute pitch to present their solution to the jury.</li>
+              <li>The use of AI tools (like ChatGPT, Gemini, etc.) for ideation, problem-solving, or content generation
+                is strictly prohibited. Violations may lead to disqualification.</li>
+              <li>The final decision of the judges and organizing committee is absolute, binding, and non-negotiable.
+              </li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Innovation and Creativity – 25 pts</li>
+              <li>User-Centric Approach – 25 pts</li>
+              <li>Prototype Clarity and Execution – 25 pts</li>
+              <li>Pitch and Communication – 25 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              ANSHIKA BANSAL<br>
+              +91 8173737383
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 4 Modal -->
+  <div class="modal fade" id="event4Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">AI for Good: Prompting with Purpose</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/AiForGood.png" alt="AI for Good Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">AI for Good</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Event</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">VI to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Participant</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>AI for Good: Prompting with Purpose</strong> is a forward-thinking event where students become
+              changemakers by tackling real-world societal challenges using the power of AI. Participants will showcase
+              their
+              creativity and precision in prompt engineering to guide AI toward producing meaningful, socially
+              responsible outputs aligned with the theme: <strong>AI for Good</strong>.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>Participants will be given a base prompt and its AI-generated output.</li>
+              <li>They must analyze the limitations of the output and refine the prompt based on a specific refinement
+                goal.</li>
+              <li>The objective is to iteratively improve the prompt so that the AI generates a more appropriate,
+                impactful, or creative response.</li>
+              <li>Each participant will receive two refinement goals and will have 5 minutes for each to craft a
+                suitable revised prompt.</li>
+              <li>After submitting the AI chat link, participants will get 10 minutes to develop and explain the
+                reasoning behind their changes.</li>
+              <li>This explanation will be presented to a panel of judges.</li>
+              <li>Participants must bring their own device with internet access (BYOD).</li>
+              <li>Total Time Duration: 30 minutes including pitch preparation.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Prompt Clarity & Precision – 30 pts</li>
+              <li>Creativity & Innovation – 20 pts</li>
+              <li>Alignment with Refinement Challenge – 30 pts</li>
+              <li>Prompt Engineering Rationale – 20 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              SAMBHAV TONGARIA<br>
+              +91 8595889329
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Event 5 Modal -->
+  <div class="modal fade" id="event5Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Design Dynamos: Web Edition</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/DesignDynamos.png" alt="Design Dynamos Logo"
+              class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Design Dynamos: Web Edition</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Event</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">VII to VIII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Participant</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              Unleash your creativity and technical skills in <strong>Website Designing</strong>!<br><br>
+              This exciting event challenges students to design and develop a fully functional, visually appealing, and
+              user-friendly webpage based on a provided theme. Showcase your innovation using modern web development
+              languages and platforms.
+              The competition encourages clean design, effective content layout, interactivity, and responsiveness.
+            </p>
+
+            <p class="fs-5 text-danger">
+              <strong>Important Note:</strong> Use of Notepad++, VS Code, or other editors is strictly prohibited.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>The theme or topic for the webpage will be provided at the beginning of the event.</li>
+              <li>All content must be relevant and appropriate to the theme.</li>
+              <li>Total duration: Approximately 1 hour.</li>
+              <li>Participants must submit their project within the allotted time.</li>
+              <li>Use of pre-built templates or AI-generated content is discouraged.</li>
+              <li>Allowed technologies: HTML, CSS, JavaScript.</li>
+              <li>Non-compliance with tool restrictions or time limits may result in disqualification.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Creativity and Design – 25 pts</li>
+              <li>Functionality and Responsiveness – 25 pts</li>
+              <li>Code Structure and Cleanliness – 25 pts</li>
+              <li>Overall User Experience – 25 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              YASHVI BANSAL<br>
+              +91 9315236889
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 6 Modal -->
+  <div class="modal fade" id="event6Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Visual Pitch: Photography Meets Marketing</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/VisualPitch.png" alt="Visual Pitch Logo"
+              class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Visual Pitch</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Innovation</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">IX to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">2 Participants</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>Visual Pitch</strong> is where creativity meets strategy! Students will blend photography and
+              marketing by capturing compelling images and transforming them into eye-catching advertisements. This is
+              your chance to turn visual storytelling into powerful, marketable content.
+            </p>
+
+            <h5 class="mt-4">Round 1: Digital Commercial Creation</h5>
+            <ul class="fs-5">
+              <li>Create a cinematic-style commercial for any product of your choice.</li>
+              <li>The commercial should resemble a short ad and creatively highlight the product.</li>
+              <li>An example video is provided to help understand the expected quality and style.</li>
+              <li><strong>Submission Format:</strong> .mp4 preferred, 20 seconds to 1 minute in duration.</li>
+              <li><strong>Submission Method:</strong> Upload to Google Drive and submit the link via the official form.
+              </li>
+              <li><strong>Deadline:</strong> 25 July 2025</li>
+              <li>Use of AI tools, plagiarism, or copying existing advertisements will lead to disqualification.</li>
+              <li><strong>Submission Link:</strong> <a href="https://forms.gle/Fcq9yoV39ucqT20d" target="_blank"
+                  class="text-white text-decoration-underline">Submit Here</a></li>
+            </ul>
+
+            <h6>Judgement Criteria (Round 1):</h6>
+            <ul class="fs-5">
+              <li>Creativity and Concept – 30 pts</li>
+              <li>Cinematography and Editing – 30 pts</li>
+              <li>Clarity and Purpose – 20 pts</li>
+              <li>Product Integration – 20 pts</li>
+            </ul>
+
+            <h5 class="mt-4">Round 2: On-Spot Product Photography + Ad Design</h5>
+            <ul class="fs-5">
+              <li>Shortlisted teams will be invited to the host school for Round 2.</li>
+              <li>Participants must bring their own camera and laptop with internet access.</li>
+              <li>Use of DSLR or semi-professional cameras is recommended. Mobile photography is not allowed.</li>
+              <li>Participants will capture photographs using props provided and create an advertisement using those
+                photos.</li>
+              <li>Ad designs may include text overlays, graphic design elements, and marketing messages.</li>
+              <li>All content must be created on the spot during the event.</li>
+              <li>Use of AI tools, stock images, or pre-designed material is prohibited.</li>
+              <li>The final decision of judges is absolute and non-negotiable.</li>
+            </ul>
+
+            <h6>Judgement Criteria (Round 2):</h6>
+            <ul class="fs-5">
+              <li>Creativity and Originality – 30 pts</li>
+              <li>Visual & Technical Quality – 25 pts</li>
+              <li>Ad Design & Message Clarity – 25 pts</li>
+              <li>Relevance and Presentation – 20 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              SAMBHAV TONGARIA<br>
+              +91 8595889329
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 7 Modal -->
+  <div class="modal fade" id="event7Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Ad Madness: Motion Design</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/AdMadness.png" alt="Ad Madness Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Ad Madness</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Event</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">IX to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">2 Participants</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>Ad Madness</strong> invites students to create, animate, and captivate! This animation event
+              challenges participants to blend vibrant visuals, storytelling, and motion design techniques to deliver
+              impactful messages with creativity and computing skills.
+            </p>
+
+            <h5 class="mt-4">Theme:</h5>
+            <p class="fs-5"><strong>"Disconnect to Reconnect"</strong> — Unplug from screens and reconnect with nature
+              or hobbies.</p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>Create an animated advertisement focused on the given theme.</li>
+              <li>The advertisement should clearly convey a message related to “Disconnect to Reconnect.”</li>
+              <li><strong>Video Duration:</strong> 30 to 90 seconds.</li>
+              <li><strong>Round 1:</strong> Submit your motion design video by uploading to Google Drive or YouTube and
+                sharing the link via the official form.</li>
+              <li><strong>Submission Form:</strong> <a href="http://forms.gle/MfEiMdqZkQ08Yi05A" target="_blank"
+                  class="text-white text-decoration-underline">Submit Here</a></li>
+              <li>Ensure the video is publicly viewable or downloadable by the host school.</li>
+              <li><strong>Round 2:</strong> Shortlisted teams will present their animations live at the host school.
+              </li>
+              <li>Only original work will be accepted. Plagiarism or AI-generated content is prohibited.</li>
+              <li>Approved software includes: Canva, Canva Pro, Adobe After Effects, Adobe Spark, Clipchamp, etc.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Technical Quality – 25 pts</li>
+              <li>Creativity and Originality – 25 pts</li>
+              <li>Presentation Flow – 25 pts</li>
+              <li>Theme Relevance – 25 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              YASHVI BANSAL<br>
+              +91 9315236889
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 8 Modal -->
+  <div class="modal fade" id="event8Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Encipher: Python Programming</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/Encipher.png" alt="Encipher Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Encipher</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline (Python)</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">XI to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">2 Teams</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>Encipher</strong> is the ultimate coding arena where logic, creativity, and programming prowess
+              come together! Participants will battle it out using Python in a two-round competition designed to test
+              both theoretical understanding and real-world application.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>Only the Python programming language is allowed.</li>
+              <li>This is an individual event. No team or group work is permitted.</li>
+              <li>The event is divided into two rounds.</li>
+              <li><strong>Round 1:</strong> Pen-and-paper coding assessment based on logic and syntax.</li>
+              <li><strong>Round 2:</strong> Real-life problem-solving using Python (e.g., weather report generator).
+              </li>
+              <li>Participants must complete the Round 2 coding task in the shortest possible time.</li>
+              <li>Plagiarism, code sharing, or any unethical behavior will result in disqualification.</li>
+              <li>Professional conduct and fair competition are expected at all times.</li>
+              <li>Final decisions made by the judges and organizing committee are binding and non-negotiable.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+
+            <h6>Round 1:</h6>
+            <ul class="fs-5">
+              <li>Maximum score based on correctness of pen-and-paper answers.</li>
+            </ul>
+
+            <h6>Round 2:</h6>
+            <ul class="fs-5">
+              <li>Execution of Code – 30 pts</li>
+              <li>Code Optimization – 20 pts</li>
+              <li>User Menu Options – 30 pts</li>
+              <li>Bug-Free Functionality – 20 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              DEVANSH BANSAL<br>
+              +91 9315566296
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 9 Modal -->
+  <div class="modal fade" id="event9Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Tech Tussle: IT Quiz</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/TechTussle.png" alt="Tech Tussle Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Tech Tussle</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline Quiz</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">VI to X</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">2 Participants</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>Tech Tussle</strong> is a fast-paced, thrilling IT quiz designed to challenge and excite students
+              with a knack for technology and current affairs. From groundbreaking innovations to digital trends, this
+              quiz celebrates curious minds and lightning-fast thinking.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>This is a team event with 2 participants per team.</li>
+              <li>Topics may include Technology, Science, Internet Culture, and Tech Business.</li>
+              <li>The quiz will be conducted in two rounds.</li>
+              <li><strong>Round 1:</strong> Pen-and-paper MCQ round.</li>
+              <li>Negative marking will apply for incorrect answers in Round 1.</li>
+              <li><strong>Round 2:</strong> Top teams will qualify and face off on stage in a buzzer-style quiz.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Teams will be ranked based on total points scored across both rounds.</li>
+              <li>Accuracy, speed, and strategic answering will be key.</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              TAARINI<br>
+              +91 9767178375
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 10 Modal -->
+  <div class="modal fade" id="event10Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Excel Warriors: Data Analysis Challenge</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/ExcelWarriors.png" alt="Excel Warriors Logo"
+              class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Excel Warriors</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline (Excel)</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">VIII to XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Team</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>Excel Warriors</strong> is a high-stakes data analysis challenge where participants clean,
+              analyze, and visualize real-world datasets using Microsoft Excel. It’s not just about spreadsheets—it’s
+              about uncovering insights and telling a story with data.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>Each participant will receive a raw dataset at the beginning of the challenge.</li>
+              <li>The goal is to clean, analyze, and present data-driven insights within the given timeframe.</li>
+              <li>Participants must use <strong>Microsoft Excel only</strong>.</li>
+              <li>Work must be done individually—no collaboration or external assistance.</li>
+              <li>Pre-built templates, VBA/macros, or AI-generated content are strictly prohibited.</li>
+              <li>Bring your own device (BYOD) for the event. Internet access will not be provided.</li>
+            </ul>
+
+            <h5 class="mt-4">Key Skills to Demonstrate:</h5>
+            <ul class="fs-5">
+              <li><strong>Data Cleaning:</strong> Handle duplicates, blanks, formatting issues.</li>
+              <li><strong>Data Analysis:</strong> Use formulas, pivot tables, sorting, filtering, etc.</li>
+              <li><strong>Visualization:</strong> Design clean charts, graphs, dashboards, and apply conditional
+                formatting.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Data Understanding & Cleaning – 25 pts</li>
+              <li>Insight Generation – 25 pts</li>
+              <li>Visualization & Presentation – 25 pts</li>
+              <li>Interpretation & Conclusion – 25 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              AKSHARA AGGARWAL<br>
+              +91 8595928953
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 11 Modal -->
+  <div class="modal fade" id="event11Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">IT Monologue: Byte-Sized Monologues</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/ITMonologue.png" alt="eB IT Monologue Logo"
+              class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">IT Monologue</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline (Stage)</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grade: <span class="fw-normal">III to IV</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">2 Teams</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              <strong>IT Monologue</strong> is a vibrant, performance-based event where young students personify an
+              iconic IT gadget, software, or legendary tech personality. Using voice, expressions, props, and
+              imagination, they’ll bring innovation to life on stage!
+            </p>
+
+            <p class="fs-5">
+              From revolutionary devices like the smartphone or tablet, to pioneers like Ada Lovelace or Steve Jobs,
+              participants will celebrate the digital age through dramatic flair and insightful storytelling.
+            </p>
+
+            <h5 class="mt-4">Theme:</h5>
+            <p class="fs-5">
+              Personification of any <strong>IT Gadget, IT Personality, or Software</strong>.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>The monologue should include informative and engaging elements such as features, innovations,
+                contributions, and interesting facts.</li>
+              <li>Maximum presentation time is <strong>90 seconds</strong>.</li>
+              <li>Participants must use appropriate props to enhance their presentation.</li>
+              <li>Costumes are encouraged to reflect the chosen gadget/personality/software.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Presentation – 30 pts</li>
+              <li>Creativity – 20 pts</li>
+              <li>Research – 30 pts</li>
+              <li>Content – 20 pts</li>
+            </ul>
+
+            <p class="mt-4 fs-5">
+              <strong>Contact:</strong><br>
+              TAARINI<br>
+              +91 767178375
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 12 Modal -->
+  <div class="modal fade" id="event12Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Cubetron: Rubik’s Cube Challenge</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/Cubetron.png" alt="Cubetron Logo" class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Cubetron</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grades:</div>
+            <div class="fw-normal">V–VIII (Category 1)</div>
+            <div class="fw-normal mb-2">IX–XII (Category 2)</div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">2 Teams</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              Get ready to twist, turn, and solve! The Interschool 3x3 and 5x5 Rubik's Cube competition is a thrilling
+              test of speed, focus, and problem-solving skills. This competition invites the best young cubers from
+              various schools to compete head-to-head in solving the classic 3x3 and 5x5 Rubik's Cube in the shortest
+              possible time.
+            </p>
+
+            <!-- Category 1 -->
+            <h5 class="mt-4">Category 1 (Grades V–VIII): 3x3 Cube</h5>
+            <ul class="fs-5">
+              <li>Students need to carry their own cube (3x3 for rounds).</li>
+              <li>Prior to each round, a scrambler will scramble the cubes.</li>
+              <li>Scrambled cubes will be provided and a limited inspection time will be given before solving.</li>
+              <li>Timings will be recorded using an official timing device such as a Stackmat timer.</li>
+              <li>The timer will start when the participant touches the cube and stop when the solved state is achieved.
+              </li>
+            </ul>
+
+            <h6 class="fw-bold">Round Instructions:</h6>
+            <ul class="fs-5">
+              <li>Round 1: Solve a 3x3 cube. Fastest correct solves will be shortlisted.</li>
+              <li>Round 2: Solve a 3x3 cube again in the shortest time to win.</li>
+            </ul>
+
+            <h6 class="fw-bold">Judgement Criteria:</h6>
+            <ul class="fs-5">
+              <li>Round 1: Clearance Based on First to Solve</li>
+              <li>Round 2: Speed (50 pts), Solution Accuracy (50 pts)</li>
+            </ul>
+
+            <!-- Category 2 -->
+            <h5 class="mt-5">Category 2 (Grades IX–XII): 5x5 Cube</h5>
+            <ul class="fs-5">
+              <li>Students need to carry their own cube (5x5 for both rounds).</li>
+              <li>Prior to each round, a scrambler will scramble the cubes.</li>
+              <li>Limited inspection time will be given to observe the scrambled cube.</li>
+              <li>Timings will be recorded using an official timing device like a Stackmat timer.</li>
+              <li>The timer will start when the participant touches the cube and stop upon solving.</li>
+            </ul>
+
+            <h6 class="fw-bold">Round Instructions:</h6>
+            <ul class="fs-5">
+              <li>Round 1: Solve a 5x5 cube. Top solvers advance to Round 2.</li>
+              <li>Round 2: Solve another 5x5 cube. Fastest and correct solution wins.</li>
+            </ul>
+
+            <h6 class="fw-bold">Judgement Criteria:</h6>
+            <ul class="fs-5">
+              <li>Round 1: Clearance Based on First to Solve</li>
+              <li>Round 2: Speed (50 pts), Solution Accuracy (50 pts)</li>
+            </ul>
+
+            <h6 class="fw-bold mt-4">Coordinator:</h6>
+            <p class="fs-5 mb-0">Anshika Bansal</p>
+            <p class="fs-5">+91 701737383</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event 13 Modal -->
+  <div class="modal fade" id="event13Modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content glass-modal text-white p-4">
+        <div class="modal-header border-0 w-100 d-block text-center">
+          <h2 class="modal-title fw-bold text-uppercase">Console Clash: Gaming Tournament</h2>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+          <!-- Left Column (Sticky) -->
+          <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+            style="width: 33.3333%; position: sticky; top: 0;">
+            <img src="assets/images/events/ConsoleClash.png" alt="Console Clash Logo"
+              class="img-fluid rounded-circle mb-4"
+              style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+            <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Console Clash</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Grades: <span class="fw-normal">IX–XII</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+            <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">2 Participants</span></div>
+          </div>
+
+          <!-- Right Column (Scrollable) -->
+          <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+            <p class="fs-5">
+              Level up your skills — it's game time on the B–esports! Competitive eSports event featuring games. The
+              registered participants will be grouped into brackets, engaging in matches where only one winner emerges
+              from each game. With each match, the intensity rises as contestants vie for victory, culminating in the
+              crowning of the ultimate champion.
+            </p>
+
+            <h5 class="mt-4">General Instructions:</h5>
+            <ul class="fs-5">
+              <li>Participants must exhibit good sportsmanship throughout the competition.</li>
+              <li>Respectful behaviour towards opponents, referees, organizers, and equipment is expected.</li>
+              <li>Any disruptive or disrespectful behaviour may result in penalties or disqualification.</li>
+              <li>A maximum of 2 individual participants will be allowed from each school.</li>
+              <li>Ready-made brackets will not be changed, and no other game choice will be allowed.</li>
+            </ul>
+
+            <h5 class="mt-4">Judgement Criteria:</h5>
+            <ul class="fs-5">
+              <li>Clearing all the stages</li>
+            </ul>
+
+            <h6 class="fw-bold mt-4">Coordinator:</h6>
+            <p class="fs-5 mb-0">Ahaan Arora</p>
+            <p class="fs-5">+91 7982169099</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Event 14 Modal -->
+<div class="modal fade" id="event14Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content glass-modal text-white p-4">
+      <div class="modal-header border-0 w-100 d-block text-center">
+        <h2 class="modal-title fw-bold text-uppercase">Mystery Trail: Surprise Event</h2>
+        <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex" style="height: 80vh; overflow: hidden;">
+        <!-- Left Column (Sticky) -->
+        <div class="sticky-left d-flex flex-column align-items-center text-center border-end pe-3"
+             style="width: 33.3333%; position: sticky; top: 0;">
+          <img src="assets/images/events/MustryTrail.png" alt="Mystery Trail Logo" class="img-fluid rounded-circle mb-4"
+               style="width: 200px; height: 200px; object-fit: cover; border: 3px solid white;" />
+
+          <div class="mb-2 fs-5 fw-semibold">Event: <span class="fw-normal">Mystery Trail</span></div>
+          <div class="mb-2 fs-5 fw-semibold">Mode: <span class="fw-normal">Offline</span></div>
+          <div class="mb-2 fs-5 fw-semibold">Grades: <span class="fw-normal">VII–XII</span></div>
+          <div class="mb-2 fs-5 fw-semibold">Team Size: <span class="fw-normal">Individual</span></div>
+          <div class="mb-2 fs-5 fw-semibold">Max Teams per School: <span class="fw-normal">1 Participant</span></div>
+        </div>
+
+        <!-- Right Column (Scrollable) -->
+        <div class="ps-4" style="width: 66.6666%; height: 100%; overflow-y: auto;">
+          <p class="fs-5 fst-italic">"An investment in knowledge pays the best interest." — Benjamin Franklin</p>
+
+          <p class="fs-5">
+            Everything about this event will be revealed on the day itself, keeping you on the edge of your seat! Expect the unexpected in this exciting and mind-bending challenge.
+          </p>
+
+          <h5 class="mt-4">General Instructions:</h5>
+          <ul class="fs-5">
+            <li>Participants must bring their mobile phones, properly labelled with their name and school name.</li>
+            <li>Phones must be fully charged before the event begins.</li>
+            <li>The escorting teacher will oversee the safe handling of the devices during the event.</li>
+            <li>Phones may only be used for scanning QR codes (event-specific use only).</li>
+            <li>AI tools (e.g., ChatGPT, Google Lens, etc.) are prohibited unless a specific task requires their use.</li>
+            <li>Use of any unauthorized tools or cheating will result in immediate disqualification.</li>
+          </ul>
+
+          <h5 class="mt-4">Judgement Criteria:</h5>
+          <ul class="fs-5">
+            <li>Number of levels cleared</li>
+            <li>Total time taken</li>
+          </ul>
+
+          <h6 class="fw-bold mt-4">Coordinator:</h6>
+          <p class="fs-5 mb-0">Ahaan Arora</p>
+          <p class="fs-5">+91 7982169099</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <section id="contact" class="contact-section py-5">
+    <div class="container">
+      <div class="contact-box rounded-4 p-4">
+        <h2 class="text-center text-cyan mb-4">CONTACT US</h2>
+        <hr class="section-divider">
+        <div class="row">
+          <!-- Map -->
+          <div class="col-md-7 mb-4 mb-md-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5108057076536!2d77.1361252150379!3d28.704276782389602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03d8090d54f3%3A0xa598ce7d1ac48b94!2sRukmini%20Devi%20Public%20School!5e0!3m2!1sen!2sin!4v1626359454875!5m2!1sen!2sin"
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="col-md-5 d-flex align-items-center">
+            <div class="contact-info text-center w-100">
+              <p><i class="bi bi-globe"></i><br> <strong>School Website</strong><br> <a
+                  href="https://www.rdpschool.edu.in" target="_blank" class="text-dark">www.rdpschool.edu.in</a></p>
+              <p><i class="bi bi-envelope-fill"></i><br> digilogous@rdpschool.edu.in</p>
+              <p><i class="bi bi-telephone-fill"></i><br> +91-9667433774</p>
+              <p><i class="bi bi-geo-alt-fill"></i><br> RUKMINI DEVI PUBLIC SCHOOL<br> CD BLOCK PITAMPURA, DELHI -
+                110034</p>
+              <p class="mt-3">Follow us on<br>
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+                                    Footer Start
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------>
+  <footer>
+    <div class="wave wave1">
+      <div class="footer-content">
+        <p>
+          Copyright &#169; Rukmini Devi Public School, Pitampura
+          <br>
+          Developed By : Harman Singh Jassal & Arjan Singh Jassal
+        </p>
+      </div>
+    </div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+  </footer>
+  <!---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+                                    Footer End
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.3/vanilla-tilt.min.js"></script>
+  <script src="assets/js/tilt.js"></script>
+  <script src="assets/js/background_e.js"></script>
+
+
+</body>
+
+</html>
