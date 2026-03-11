@@ -196,3 +196,55 @@ requestAnimationFrame(animateBorder);
 }
 
 animateBorder();
+
+/* =========================
+    Testimonial section
+========================= */
+
+let cards = document.querySelectorAll(".testimonial-card");
+let current = 0;
+
+function updateCards(){
+
+cards.forEach(function(card){
+card.classList.remove("active");
+card.classList.remove("next-card");
+});
+
+cards[current].classList.add("active");
+
+let next = current + 1;
+
+if(next >= cards.length){
+next = 0;
+}
+
+cards[next].classList.add("next-card");
+
+}
+
+document.querySelector(".next-btn").onclick = function(){
+
+current++;
+
+if(current >= cards.length){
+current = 0;
+}
+
+updateCards();
+
+};
+
+document.querySelector(".prev-btn").onclick = function(){
+
+current--;
+
+if(current < 0){
+current = cards.length - 1;
+}
+
+updateCards();
+
+};
+
+updateCards();
