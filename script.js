@@ -202,33 +202,38 @@ animateBorder();
 ========================= */
 
 let cards = document.querySelectorAll(".testimonial-card");
-let current = 0;
+let index = 0;
 
 function updateCards(){
 
-cards.forEach(function(card){
-card.classList.remove("active");
-card.classList.remove("next-card");
+cards.forEach(card=>{
+card.classList.remove("active","prev","next");
 });
 
-cards[current].classList.add("active");
+cards[index].classList.add("active");
 
-let next = current + 1;
+let prev = index - 1;
+let next = index + 1;
+
+if(prev < 0){
+prev = cards.length - 1;
+}
 
 if(next >= cards.length){
 next = 0;
 }
 
-cards[next].classList.add("next-card");
+cards[prev].classList.add("prev");
+cards[next].classList.add("next");
 
 }
 
 document.querySelector(".next-btn").onclick = function(){
 
-current++;
+index++;
 
-if(current >= cards.length){
-current = 0;
+if(index >= cards.length){
+index = 0;
 }
 
 updateCards();
@@ -237,14 +242,14 @@ updateCards();
 
 document.querySelector(".prev-btn").onclick = function(){
 
-current--;
+index--;
 
-if(current < 0){
-current = cards.length - 1;
+if(index < 0){
+index = cards.length - 1;
 }
 
 updateCards();
 
 };
 
-updateCards();
+updateCards();  
