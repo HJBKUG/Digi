@@ -253,3 +253,75 @@ updateCards();
 };
 
 updateCards();  
+
+
+const footerCanvas = document.getElementById("footerParticles");
+const footerCtx = footerCanvas.getContext("2d");
+
+let footerParticles = [];
+let footerParticleCount = 40;
+
+function resizeFooterCanvas(){
+footerCanvas.width = window.innerWidth;
+footerCanvas.height = footerCanvas.parentElement.offsetHeight;
+}
+
+window.addEventListener("resize", resizeFooterCanvas);
+resizeFooterCanvas();
+
+class FooterParticle{
+
+constructor(){
+this.x = Math.random()*footerCanvas.width;
+this.y = Math.random()*footerCanvas.height;
+this.size = Math.random()*2+1;
+this.speedX = Math.random()*0.5-0.25;
+this.speedY = Math.random()*0.5-0.25;
+}
+
+update(){
+
+this.x += this.speedX;
+this.y += this.speedY;
+
+if(this.x<0 || this.x>footerCanvas.width) this.speedX *= -1;
+if(this.y<0 || this.y>footerCanvas.height) this.speedY *= -1;
+
+}
+
+draw(){
+
+footerCtx.fillStyle="rgba(0,255,255,0.7)";
+footerCtx.beginPath();
+footerCtx.arc(this.x,this.y,this.size,0,Math.PI*2);
+footerCtx.fill();
+
+}
+
+}
+
+function initFooterParticles(){
+
+footerParticles=[];
+
+for(let i=0;i<footerParticleCount;i++){
+footerParticles.push(new FooterParticle());
+}
+
+}
+
+function animateFooterParticles(){
+
+footerCtx.clearRect(0,0,footerCanvas.width,footerCanvas.height);
+
+footerParticles.forEach(p=>{
+p.update();
+p.draw();
+});
+
+requestAnimationFrame(animateFooterParticles);
+
+}
+
+initFooterParticles();
+animateFooterParticles();

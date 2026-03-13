@@ -429,8 +429,8 @@ body {
 .champions-row img,
 .guests-row img,
 .moments-row img {
-    width: 220px;
-    height: 260px;
+    width: 350px;
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -550,23 +550,18 @@ body {
 .parallax-content {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.35);
-    /* optional overlay for text readability */
     padding: 40px 60px;
-    border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    background: #00000062;
 }
 
 .parallax-content h2 {
     font-size: 48px;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px cyan;
 }
 
 .parallax-content p {
     font-size: 20px;
-    color: #c6f8ff;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    color: #ffffff;
 }
 
 @media screen and (max-width: 768px) {
@@ -954,37 +949,296 @@ CONTACT SECTION
 }
 
 
-/* ================= FOOTER ================= */
+/* ======================
+TECH GRID FOOTER
+====================== */
 
-.site-footer {
-    position: relative;
-    background: #2d6fa3;
-    color: white;
-    text-align: center;
-    padding: 80px 20px 40px;
-    overflow: hidden;
+.tech-footer{
+position:relative;
+background:#1f4e79;
+color:white;
+text-align:center;
+padding:70px 20px;
+overflow:hidden;
 }
 
-/* canvas wave */
+/* grid background */
 
-#footerWave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
+.grid-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+animation:gridMove 12s linear infinite;
+opacity:0.4;
+}
+
+/* grid animation */
+
+@keyframes gridMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(40px);
+}
+
 }
 
 /* footer text */
 
-.footer-content {
-    position: relative;
-    z-index: 2;
-    font-size: 18px;
-    line-height: 1.6;
+.footer-content{
+position:relative;
+z-index:2;
+font-size:18px;
+line-height:1.6;
+}
+/* ======================
+Event Page Styles
+====================== */
+/* HERO */
+
+.events-hero{
+
+height:45vh;
+background:#7c1f2a;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+
 }
 
-.footer-dev {
-    margin-top: 6px;
-    opacity: 0.9;
+.events-hero h1{
+
+font-size:50px;
+margin-bottom:10px;
+
+}
+
+.events-hero p{
+
+font-size:18px;
+
+}
+
+
+
+/* EVENTS SECTION */
+
+.events-section{
+
+position:relative;
+padding:100px 0;
+background:white;
+overflow:hidden;
+
+}
+
+
+
+/* SLIDER */
+
+.events-wrapper{
+
+overflow:hidden;
+width:80%;
+margin:auto;
+
+}
+
+.events-slider{
+
+display:flex;
+gap:40px;
+transition:transform 0.6s ease;
+
+}
+
+
+
+/* CARD */
+
+.event-card{
+
+min-width:340px;
+background:white;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+text-align:center;
+overflow:hidden;
+transition:0.4s;
+
+}
+
+.event-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.event-card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.event-card h3{
+
+margin-top:15px;
+font-size:24px;
+
+}
+
+.event-card p{
+
+padding:10px 20px 25px;
+font-size:15px;
+
+}
+
+
+
+/* BUTTONS */
+
+.event-btn{
+
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:45px;
+background:none;
+border:none;
+cursor:pointer;
+color:#7c1f2a;
+z-index:10;
+
+}
+
+.prev{
+
+left:40px;
+
+}
+
+.next{
+
+right:40px;
+
+}
+.events-section{
+
+padding:100px 8%;
+background:white;
+text-align:center;
+
+}
+
+.events-title{
+
+font-size:40px;
+margin-bottom:60px;
+color:#7c1f2a;
+
+}
+
+
+
+.events-grid{
+
+display:flex;
+gap:25px;
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+
+
+.event-card{
+
+position:relative;
+width:260px;
+height:360px;
+overflow:hidden;
+border-radius:14px;
+cursor:pointer;
+transition:0.5s;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+
+
+.event-card img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.6s;
+
+}
+
+
+
+.event-info{
+
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:25px;
+background:linear-gradient(transparent,rgba(0,0,0,0.85));
+color:white;
+transform:translateY(70px);
+transition:0.5s;
+
+}
+
+
+
+.event-card:hover{
+
+transform:scale(1.15);
+z-index:10;
+
+}
+
+
+
+.event-card:hover img{
+
+transform:scale(1.1);
+
+}
+
+
+
+.event-card:hover .event-info{
+
+transform:translateY(0);
+
+}
+
+
+
+.events-grid:hover .event-card:not(:hover){
+
+transform:scale(0.9);
+opacity:0.6;
+
 }

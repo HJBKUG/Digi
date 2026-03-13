@@ -1,0 +1,190 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#031c3b;
+color:white;
+overflow-x:hidden;
+}
+
+/* PARTICLE BACKGROUND */
+
+#particleCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 6%;
+background:#031c3b;
+z-index:10;
+}
+
+.nav-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+height:40px;
+}
+
+.logo2{
+height:40px;
+}
+
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+color:white;
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00ff9d;
+}
+
+/* EVENTS SECTION */
+
+.events-section{
+padding:140px 8%;
+text-align:center;
+}
+
+.events-title{
+font-size:60px;
+margin-bottom:70px;
+color:#7df9ff;
+
+text-shadow:
+0 0 15px #00f0ff,
+0 0 35px #00f0ff;
+}
+
+/* GRID */
+
+.events-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+/* CARD */
+
+.event-card{
+
+background:rgba(10,30,60,0.9);
+
+border-radius:18px;
+
+padding:25px;
+
+border:2px solid #00ff9d;
+
+transition:0.4s;
+
+}
+
+.event-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #00ff9d;
+}
+
+/* IMAGE FRAME */
+
+.event-image{
+
+width:100%;
+height:200px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+overflow:hidden;
+
+border-radius:12px;
+
+margin-bottom:20px;
+
+}
+
+.event-image img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+/* TITLE */
+
+.event-card h3{
+
+font-size:24px;
+margin-bottom:18px;
+
+}
+
+/* BUTTON */
+
+.event-btn{
+
+display:inline-block;
+
+padding:12px 26px;
+
+border-radius:30px;
+
+background:linear-gradient(90deg,#00f0ff,#00ff9d);
+
+color:#031c3b;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:0.3s;
+
+}
+
+.event-btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 15px #00ff9d;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.events-title{
+font-size:40px;
+}
+
+.events-grid{
+grid-template-columns:1fr;
+}
+
+}
