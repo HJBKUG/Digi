@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #031c3b;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* PARTICLE BACKGROUND */
+
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* =========================
+   GLASS NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 35px;
+    border-radius: 16px;
+    background: rgba(10, 20, 40, 0.35);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+    z-index: 1000;
+}
+
+.logo {
+    height: 40px;
+}
+
+.logo img {
+    height: 100%;
+    transition: 0.3s;
+}
+
+.digi-logo {
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgb(0, 89, 133));
+}
+
+.schl-logo {
+    filter: drop-shadow(0 0 10px rgb(0, 255, 238));
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffff;
+    text-shadow: 2px 0 cyan, -2px 0 blue;
+}
+
+/* EVENTS SECTION */
+
+.events-section {
+    padding: 140px 8%;
+    text-align: center;
+}
+
+.events-title {
+    font-size: 60px;
+    margin-bottom: 70px;
+    color: #7df9ff;
+
+    text-shadow:
+        0 0 15px #00f0ff,
+        0 0 35px #00f0ff;
+}
+
+/* GRID */
+
+.events-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+
+    perspective: 1000px;
+
+}
+
+/* CARD */
+
+.event-card {
+
+    position: relative;
+
+    background: rgba(10, 30, 60, 0.9);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    border: 2px solid #00ff9d;
+
+    transition: 0.4s;
+
+    overflow: hidden;
+
+}
+
+/* LIGHT SWEEP EFFECT */
+
+.event-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+    left: -60%;
+
+    width: 50%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    transition: 0.7s;
+
+}
+
+.event-card:hover::before {
+
+    left: 130%;
+
+}
+
+/* CARD HOVER */
+
+.event-card:hover {
+
+    transform: rotateX(6deg) rotateY(-6deg) translateY(-10px) scale(1.04);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 255, 255, 0.4);
+
+}
+
+/* IMAGE FRAME */
+
+.event-image {
+
+    position: relative;
+
+    width: 220px;
+    height: 220px;
+
+    margin: auto;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+}
+
+.event-image img {
+
+    width: 160px;
+    height: 160px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    background: white;
+
+    z-index: 2;
+
+    transition: 0.4s;
+
+}
+
+/* HUD RINGS */
+
+.event-image::before,
+.event-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid #00f0ff;
+
+    width: 100%;
+    height: 100%;
+
+    animation: rotateRing 8s linear infinite;
+
+    opacity: 0.7;
+
+}
+
+.event-image::after {
+
+    width: 180px;
+    height: 180px;
+
+    border: 2px dashed #00ff9d;
+
+    animation: rotateRingReverse 6s linear infinite;
+
+}
+
+/* TITLE */
+
+.event-card h3 {
+
+    font-size: 24px;
+    margin-bottom: 18px;
+
+}
+
+/* BUTTON */
+
+.event-btn {
+
+    display: inline-block;
+
+    padding: 12px 26px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(90deg, #00f0ff, #00ff9d);
+
+    color: #031c3b;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+.event-btn:hover {
+
+    transform: scale(1.08);
+
+    box-shadow: 0 0 15px #00ff9d;
+
+}
+
+/* HOVER EFFECTS */
+
+.event-card:hover .event-image::before {
+
+    border-color: #00f0ff;
+
+    box-shadow:
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px #00f0ff;
+
+}
+
+.event-card:hover .event-image::after {
+
+    border-color: #00ff9d;
+
+    box-shadow:
+        0 0 10px #00ff9d,
+        0 0 25px #00ff9d;
+
+}
+
+.event-card:hover img {
+
+    transform: scale(1.1);
+
+}
+
+/* RING ANIMATIONS */
+
+@keyframes rotateRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes rotateRingReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+    .events-title {
+        font-size: 40px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE DESIGN FOR DIGILOGOUS WEBSITE
+========================================= */
+
+
+/* =============================
+   LARGE TABLETS (1024px)
+============================= */
+
+@media (max-width:1024px){
+
+.navbar{
+width:92%;
+padding:12px 25px;
+}
+
+.nav-links{
+gap:20px;
+}
+
+.events-title{
+font-size:48px;
+}
+
+.events-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.event-image{
+width:190px;
+height:190px;
+}
+
+.event-image img{
+width:140px;
+height:140px;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
+
+/* =============================
+   TABLETS (768px)
+============================= */
+
+@media (max-width:768px){
+
+/* NAVBAR */
+
+.navbar{
+
+flex-direction:column;
+
+gap:12px;
+
+top:10px;
+
+padding:15px;
+
+}
+
+.logo{
+height:35px;
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.nav-links a{
+font-size:15px;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+
+padding-top:120px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+padding:0 20px;
+
+}
+
+
+/* EVENTS PAGE */
+
+.events-title{
+
+font-size:36px;
+
+margin-bottom:50px;
+
+}
+
+.events-grid{
+
+grid-template-columns:1fr;
+
+gap:30px;
+
+}
+
+.event-card{
+
+padding:20px;
+
+}
+
+
+/* IMAGE SIZE */
+
+.event-image{
+
+width:170px;
+height:170px;
+
+}
+
+.event-image img{
+
+width:130px;
+height:130px;
+
+}
+
+}
+
+
+/* =============================
+   SMALL PHONES (480px)
+============================= */
+
+@media (max-width:480px){
+
+.navbar{
+
+width:95%;
+
+padding:12px;
+
+}
+
+.logo{
+
+height:28px;
+
+}
+
+.nav-links{
+
+gap:12px;
+
+}
+
+.nav-links a{
+
+font-size:14px;
+
+}
+
+
+/* HERO */
+
+.hero h1{
+
+font-size:32px;
+
+}
+
+.hero p{
+
+font-size:14px;
+
+}
+
+
+/* EVENTS */
+
+.events-title{
+
+font-size:28px;
+
+}
+
+.event-card h3{
+
+font-size:20px;
+
+}
+
+.event-btn{
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+.event-image{
+
+width:140px;
+height:140px;
+
+}
+
+.event-image img{
+
+width:100px;
+height:100px;
+
+}
+
+}
