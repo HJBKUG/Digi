@@ -164,35 +164,3 @@ function initGallery(rowSelector) {
 initGallery(".guests-row img");
 initGallery(".moments-row img");
 initGallery(".champions-row img"); // keep your champions too
-
-
-/* =========================
-   NAME BORDER ANIMATION
-========================= */
-
-const move1 = document.querySelectorAll(".nameMove1");
-const move2 = document.querySelectorAll(".nameMove2");
-
-let offset = 0;
-
-function animateBorder(){
-
-offset += 0.1;
-
-if(offset > 100){
-offset = 0;
-}
-
-move1.forEach(el=>{
-el.setAttribute("startOffset", offset + "%");
-});
-
-move2.forEach(el=>{
-el.setAttribute("startOffset", (offset + 50) + "%");
-});
-
-requestAnimationFrame(animateBorder);
-
-}
-
-animateBorder();
