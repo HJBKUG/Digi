@@ -143,12 +143,10 @@ body {
     width: 50%;
     height: 200%;
 
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.25),
-        transparent
-    );
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.25),
+            transparent);
 
     transform: rotate(25deg);
 
@@ -363,42 +361,42 @@ body {
    LARGE TABLETS (1024px)
 ============================= */
 
-@media (max-width:1024px){
+@media (max-width:1024px) {
 
-.navbar{
-width:92%;
-padding:12px 25px;
-}
+    .navbar {
+        width: 92%;
+        padding: 12px 25px;
+    }
 
-.nav-links{
-gap:20px;
-}
+    .nav-links {
+        gap: 20px;
+    }
 
-.events-title{
-font-size:48px;
-}
+    .events-title {
+        font-size: 48px;
+    }
 
-.events-grid{
-grid-template-columns:repeat(2,1fr);
-}
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.event-image{
-width:190px;
-height:190px;
-}
+    .event-image {
+        width: 190px;
+        height: 190px;
+    }
 
-.event-image img{
-width:140px;
-height:140px;
-}
+    .event-image img {
+        width: 140px;
+        height: 140px;
+    }
 
-.hero h1{
-font-size:50px;
-}
+    .hero h1 {
+        font-size: 50px;
+    }
 
-.hero p{
-font-size:18px;
-}
+    .hero p {
+        font-size: 18px;
+    }
 
 }
 
@@ -407,104 +405,104 @@ font-size:18px;
    TABLETS (768px)
 ============================= */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-/* NAVBAR */
+    /* NAVBAR */
 
-.navbar{
+    .navbar {
 
-flex-direction:column;
+        flex-direction: column;
 
-gap:12px;
+        gap: 12px;
 
-top:10px;
+        top: 10px;
 
-padding:15px;
+        padding: 15px;
 
-}
+    }
 
-.logo{
-height:35px;
-}
+    .logo {
+        height: 35px;
+    }
 
-.nav-links{
+    .nav-links {
 
-flex-wrap:wrap;
+        flex-wrap: wrap;
 
-justify-content:center;
+        justify-content: center;
 
-gap:15px;
+        gap: 15px;
 
-}
+    }
 
-.nav-links a{
-font-size:15px;
-}
-
-
-/* HERO SECTION */
-
-.hero{
-
-padding-top:120px;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-padding:0 20px;
-
-}
+    .nav-links a {
+        font-size: 15px;
+    }
 
 
-/* EVENTS PAGE */
+    /* HERO SECTION */
 
-.events-title{
+    .hero {
 
-font-size:36px;
+        padding-top: 120px;
 
-margin-bottom:50px;
+    }
 
-}
+    .hero h1 {
 
-.events-grid{
+        font-size: 40px;
 
-grid-template-columns:1fr;
+    }
 
-gap:30px;
+    .hero p {
 
-}
+        font-size: 16px;
 
-.event-card{
+        padding: 0 20px;
 
-padding:20px;
-
-}
+    }
 
 
-/* IMAGE SIZE */
+    /* EVENTS PAGE */
 
-.event-image{
+    .events-title {
 
-width:170px;
-height:170px;
+        font-size: 36px;
 
-}
+        margin-bottom: 50px;
 
-.event-image img{
+    }
 
-width:130px;
-height:130px;
+    .events-grid {
 
-}
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .event-card {
+
+        padding: 20px;
+
+    }
+
+
+    /* IMAGE SIZE */
+
+    .event-image {
+
+        width: 170px;
+        height: 170px;
+
+    }
+
+    .event-image img {
+
+        width: 130px;
+        height: 130px;
+
+    }
 
 }
 
@@ -513,84 +511,84 @@ height:130px;
    SMALL PHONES (480px)
 ============================= */
 
-@media (max-width:480px){
+@media (max-width:480px) {
 
-.navbar{
+    .navbar {
 
-width:95%;
+        width: 95%;
 
-padding:12px;
+        padding: 12px;
 
-}
+    }
 
-.logo{
+    .logo {
 
-height:28px;
+        height: 28px;
 
-}
+    }
 
-.nav-links{
+    .nav-links {
 
-gap:12px;
+        gap: 12px;
 
-}
+    }
 
-.nav-links a{
+    .nav-links a {
 
-font-size:14px;
+        font-size: 14px;
 
-}
-
-
-/* HERO */
-
-.hero h1{
-
-font-size:32px;
-
-}
-
-.hero p{
-
-font-size:14px;
-
-}
+    }
 
 
-/* EVENTS */
+    /* HERO */
 
-.events-title{
+    .hero h1 {
 
-font-size:28px;
+        font-size: 32px;
 
-}
+    }
 
-.event-card h3{
+    .hero p {
 
-font-size:20px;
+        font-size: 14px;
 
-}
+    }
 
-.event-btn{
 
-padding:10px 18px;
+    /* EVENTS */
 
-font-size:14px;
+    .events-title {
 
-}
+        font-size: 28px;
 
-.event-image{
+    }
 
-width:140px;
-height:140px;
+    .event-card h3 {
 
-}
+        font-size: 20px;
 
-.event-image img{
+    }
 
-width:100px;
-height:100px;
+    .event-btn {
 
-}
+        padding: 10px 18px;
+
+        font-size: 14px;
+
+    }
+
+    .event-image {
+
+        width: 140px;
+        height: 140px;
+
+    }
+
+    .event-image img {
+
+        width: 100px;
+        height: 100px;
+
+    }
 
 }

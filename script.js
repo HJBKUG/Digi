@@ -167,7 +167,7 @@ initGallery(".champions-row img"); // keep your champions too
 
 
 /* =========================
-   TEAM CARD BORDER ANIMATION
+   NAME BORDER ANIMATION
 ========================= */
 
 const move1 = document.querySelectorAll(".nameMove1");
