@@ -9,11 +9,9 @@
     <title>Digilogous Events</title>
 
     <link rel="stylesheet" href="stylese.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -21,198 +19,405 @@
     <canvas id="particleCanvas"></canvas>
 
     <!-- NAVBAR -->
-
-    <nav class="navbar">
-
-        <div class="logo">
-            <a href="https://rdpschool.edu.in/" target="_blank">
-                <img src="images/schlogo.png" alt="school logo" class="digi-logo">
-            </a>
-            <a href="index.html">
-                <img src="images/center-logo.png" alt="Digilogous Logo" class="schl-logo">
-            </a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="logo d-flex align-items-center gap-2">
+                <a href="https://rdpschool.edu.in/" target="_blank">
+                    <img src="images/schlogo.png" alt="school logo" class="digi-logo" height="40">
+                </a>
+                <a href="index.html">
+                    <img src="images/center-logo.png" alt="Digilogous Logo" class="schl-logo" height="40">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#parallax-section" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#parallax-section">About</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-
     </nav>
 
     <!-- EVENTS -->
-
     <section class="events-section">
-
         <h1 class="events-title">Events</h1>
-
         <div class="events-grid">
 
+            <!-- Event 1: NeuroPitch -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/MEMESYNAPSE.png">
+                    <img src="images/events/NEUROPITCH.jpeg" alt="NeuroPitch">
                 </div>
 
-                <h3>Meme Synapse</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>NeuroPitch – Ideas in Action</h3>
 
-            </div>
+                <p class="event-tagline">"Think Smart. Solve Real. Pitch Bold."</p>
 
-
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/CODESPRINT.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> IX-XII | <strong>Team:</strong> 2 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Device:</strong> BYOD</p>
                 </div>
 
-                <h3>ImpactX: STEM Innovation</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    Identify a real problem and propose an original solution using creativity,
+                    feasibility, and real-world thinking.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Judging:</strong> Innovation, Feasibility, Impact, Presentation
+                </p>
+
+                <label for="modal-neuropitch" class="event-btn">View Details</label>
             </div>
 
-
+            <!-- Event 2: ReelForge -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/DATASYNAPSE.jpeg">
+                    <img src="images/events/REALFORGE.jpeg" alt="ReelForge">
                 </div>
 
-                <h3>Design Thinking Sprint</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>ReelForge – Content Challenge</h3>
 
-            </div>
+                <p class="event-tagline">"Capture → Create → Amplify with AI"</p>
 
-
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/DIGITALDHARMA.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 8-10 | <strong>Team:</strong> 2 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Tools:</strong> CapCut, Canva, AI</p>
                 </div>
 
-                <h3>AI for GOOD</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    Create a short reel/video from photos captured during the event using AI tools
+                    for editing, effects, and storytelling.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Judging:</strong> Creativity, AI Usage, Storytelling, Editing
+                </p>
+
+                <label for="modal-reelforge" class="event-btn">View Details</label>
             </div>
 
-
+            <!-- Event 3: CodeSprint -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/NEUROFLASH.jpeg">
+                    <img src="images/events/CODESPRINT.jpeg" alt="CodeSprint">
                 </div>
 
-                <h3>Design Dynamos</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>CodeSprint – Code Clash</h3>
 
-            </div>
+                <p class="event-tagline">"Debug. Solve. Conquer."</p>
 
-
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/NEURONEXUSARENA.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 10-12 | <strong>Team:</strong> 1 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Online + Offline | <strong>Language:</strong> Python</p>
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    Compete in coding and debugging rounds to solve real-world logical and Python-based challenges.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Judging:</strong> Logic, Efficiency, Functionality, Code Practices
+                </p>
+
+                <label for="modal-codesprint" class="event-btn">View Details</label>
             </div>
 
+            <!-- Event 4: NeuroNexus Arena -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/REALFORGE.jpeg">
+                    <img src="images/events/NEURONEXUSARENA.jpeg" alt="NeuroNexus Arena">
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>NeuroNexus Arena</h3>
 
-            </div>
+                <p class="event-tagline">"Enter the Grid"</p>
 
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/ROBOREALM.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> Open | <strong>Team:</strong> 1 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Venue:</strong> GLH</p>
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    High-intensity eSports competition with structured matchups on selected PlayStation titles.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Note:</strong> Consoles provided on-site | Female participation encouraged
+                </p>
+
+                <label for="modal-neuronexus" class="event-btn">View Details</label>
             </div>
 
+            <!-- Event 5: ChatSynapse -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/SYNAPSE_X.jpeg">
+                    <img src="images/events/CHATSYNAPSE.jpeg" alt="ChatSynapse">
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>ChatSynapse – Conversational AI Challenge</h3>
 
-            </div>
+                <p class="event-tagline">"Build Intelligent Conversations"</p>
 
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/SYNAPSESTREET.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 10-12 | <strong>Team:</strong> 1 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Device:</strong> Host Lab Systems</p>
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    Design and develop a functional chatbot using no-code platforms or Python.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Focus:</strong> AI Integration, Creativity, Conversational Flow
+                </p>
+
+                <label for="modal-chatsynapse" class="event-btn">View Details</label>
             </div>
 
+            <!-- Event 6: WebXpress -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/THERANDOMACCESS.jpeg">
+                    <img src="images/events/WEBXPRESS.jpeg" alt="WebXpress">
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>WebXpress – AI Web Development Sprint</h3>
 
-            </div>
+                <p class="event-tagline">"Build with AI. Design the Future."</p>
 
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/WEBXPRESS.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> VII-IX | <strong>Team:</strong> 1 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Duration:</strong> ~1 Hour</p>
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    Build a responsive website using AI-assisted tools with chatbot and API integration.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Requirements:</strong> Chatbot, APIs, Visualization, Responsive Design
+                </p>
+
+                <label for="modal-webxpress" class="event-btn">View Details</label>
             </div>
 
+            <!-- Event 7: Digital Dharma -->
             <div class="event-card">
-
                 <div class="event-image">
-                    <img src="images/events/CHATSYNAPSE.jpeg">
+                    <img src="images/events/DIGITALDHARMA.jpeg" alt="Digital Dharma">
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <h3>Digital Dharma – Command & Conscience Arena</h3>
 
-            </div>
+                <p class="event-tagline">"AI Skills + Ethical Thinking"</p>
 
-            <div class="event-card">
-
-                <div class="event-image">
-                    <img src="images/events/NEUROPITCH.jpeg">
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 7-10 | <strong>Team:</strong> 2 | <strong>Entries:</strong> 1 Team</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Format:</strong> Written + Oral</p>
                 </div>
 
-                <h3>Visual Pitch</h3>
-                <a href="#" class="event-btn">View Details</a>
+                <p class="event-desc">
+                    Blend prompt engineering skills with ethical AI analysis through a two-level challenge.
+                </p>
 
+                <p class="event-extra">
+                    <strong>Focus:</strong> Prompting, Ethics, Analysis, Communication
+                </p>
+
+                <label for="modal-digitaldharma" class="event-btn">View Details</label>
             </div>
 
+            <!-- Event 8: Synapse Street -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/SYNAPSESTREET.jpeg" alt="Synapse Street">
+                </div>
+
+                <h3>Synapse Street – Cyber Suraksha Natak</h3>
+
+                <p class="event-tagline">"Awareness through Drama"</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 5-12 | <strong>Team:</strong> 8-10 Students</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Duration:</strong> 5-7 Minutes</p>
+                </div>
+
+                <p class="event-desc">
+                    Present an engaging street play highlighting cyber security and responsible digital behavior.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Focus:</strong> Awareness, Creativity, Performance, Messaging
+                </p>
+
+                <label for="modal-synapsestreet" class="event-btn">View Details</label>
+            </div>
+
+            <!-- Event 9: NeuroFlash -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/NEUROFLASH.jpeg" alt="NeuroFlash">
+                </div>
+
+                <h3>NeuroFlash – Rapid Tech Quiz</h3>
+
+                <p class="event-tagline">"Know or Never!"</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 9-12 | <strong>Team:</strong> 2 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Rounds:</strong> 2</p>
+                </div>
+
+                <p class="event-desc">
+                    A fast-paced tech quiz covering innovations, trends, digital culture, and technology.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Rounds:</strong> Written Elimination + Stage Quiz
+                </p>
+
+                <label for="modal-neuroflash" class="event-btn">View Details</label>
+            </div>
+
+            <!-- Event 10: RoboRealm -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/ROBOREALM.jpeg" alt="RoboRealm">
+                </div>
+
+                <h3>RoboRealm – Circuit Showcase</h3>
+
+                <p class="event-tagline">"Build Smart. Move Fast. Think Ahead."</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> Open | <strong>Team:</strong> 2 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Platform:</strong> Arduino Robots</p>
+                </div>
+
+                <p class="event-desc">
+                    Participate in robotics arena challenges involving races, navigation, and tactical tasks.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Requirement:</strong> Bring fully assembled robot
+                </p>
+
+                <label for="modal-roborealm" class="event-btn">View Details</label>
+            </div>
+
+            <!-- Event 11: The Random Access -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/THERANDOMACCESS.jpeg" alt="The Random Access">
+                </div>
+
+                <h3>The Random Access</h3>
+
+                <p class="event-tagline">"Data. Probability. Execution."</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> VII-XII | <strong>Team:</strong> 2 | <strong>Entries:</strong> 1 Team
+                    </p>
+                    <p><strong>Mode:</strong> Offline | <strong>Rounds:</strong> 3</p>
+                </div>
+
+                <p class="event-desc">
+                    A combination of puzzles, probability, quizzes, and multi-stage real-world challenges.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Focus:</strong> Logic, Teamwork, Strategy, Execution
+                </p>
+
+                <label for="modal-randomaccess" class="event-btn">View Details</label>
+            </div>
+
+            <!-- Event 12: SynapseX -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/SYNAPSE_X.jpeg" alt="SynapseX">
+                </div>
+
+                <h3>SynapseX – AI-Powered STEM Challenge</h3>
+
+                <p class="event-tagline">"Innovate for Sustainability"</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 7-10 | <strong>Team:</strong> 2 | <strong>Entries:</strong> Max 2</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Device:</strong> BYOD Allowed</p>
+                </div>
+
+                <p class="event-desc">
+                    Develop STEM + AI solutions addressing sustainability challenges like energy and waste management.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Focus:</strong> Innovation, Sustainability, AI Integration
+                </p>
+
+                <label for="modal-synapsex" class="event-btn">View Details</label>
+            </div>
+
+            <!-- Event 13: DataSynapse -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/DATASYNAPSE.jpeg" alt="DataSynapse">
+                </div>
+
+                <h3>DataSynapse – The Insight Lab</h3>
+
+                <p class="event-tagline">"Uncover Patterns. Generate Insights."</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 9-12 | <strong>Team:</strong> 2 | <strong>Entries:</strong> 1 Team</p>
+                    <p><strong>Mode:</strong> Offline | <strong>Duration:</strong> 60 Minutes</p>
+                </div>
+
+                <p class="event-desc">
+                    Analyze datasets to uncover patterns, insights, and predictions using digital tools.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Tools:</strong> Excel, Sheets, Python, AI Tools
+                </p>
+
+                <label for="modal-datasynapse" class="event-btn">View Details</label>
+            </div>
+
+            <!-- Event 14: MemeSynapse -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="images/events/MEMESYNAPSE.png" alt="MemeSynapse">
+                </div>
+
+                <h3>MemeSynapse – AI Meme Challenge</h3>
+
+                <p class="event-tagline">"Humor meets AI"</p>
+
+                <div class="event-details">
+                    <p><strong>Grades:</strong> 8-10 | <strong>Team:</strong> 1 | <strong>Entries:</strong> 1 Team</p>
+                    <p><strong>Mode:</strong> Online | <strong>Finals:</strong> Offline Showcase</p>
+                </div>
+
+                <p class="event-desc">
+                    Create AI-powered memes based on social and educational themes using creative tools.
+                </p>
+
+                <p class="event-extra">
+                    <strong>Tools:</strong> Canva AI, DALL·E, ChatGPT
+                </p>
+
+                <label for="modal-memesynapse" class="event-btn">View Details</label>
+            </div>
 
         </div>
-
     </section>
 
     <!-- Contact Section -->
@@ -279,47 +484,379 @@
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------>
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const toggler = document.getElementById("navbarToggleBtn");
-            const menuIcon = toggler.querySelector(".menu-icon");
-            const closeIcon = toggler.querySelector(".close-icon");
-            const navbarCollapse = document.getElementById("navbarNav");
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+    <!-- CSS-Only Modals using Checkbox Hack -->
+    <input type="checkbox" id="modal-neuropitch" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-neuropitch"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-neuropitch">&times;</label>
+            <h2>NeuroPitch – Ideas in Action</h2>
+            <p class="modal-tagline">"Think Smart. Solve Real. Pitch Bold."</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> IX-XII</li>
+                    <li><strong>Team Size:</strong> 2 students</li>
+                    <li><strong>Entries per School:</strong> Maximum 2 teams</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                    <li><strong>Device Policy:</strong> BYOD</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>NeuroPitch – Ideas in Action is designed to encourage young innovators to think critically about
+                    real-life challenges and present practical, creative solutions.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>Identify a genuine problem</li>
+                    <li>Propose an original and practical solution</li>
+                    <li>Create a structured PowerPoint presentation</li>
+                    <li>Deliver a clear pitch within 3 minutes</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Judging Criteria</h3>
+                <ul>
+                    <li>Problem Identification — 20 marks</li>
+                    <li>Innovation & Creativity — 20 marks</li>
+                    <li>Feasibility — 15 marks</li>
+                    <li>Impact — 15 marks</li>
+                    <li>Presentation — 20 marks</li>
+                    <li>Visual Branding — 10 marks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-            // Toggle logic
-            toggler.addEventListener("click", () => {
-                if (navbarCollapse.classList.contains("show")) {
-                    bsCollapse.hide();
-                } else {
-                    bsCollapse.show();
-                }
-            });
+    <input type="checkbox" id="modal-reelforge" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-reelforge"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-reelforge">&times;</label>
+            <h2>ReelForge – Content Challenge</h2>
+            <p class="modal-tagline">"Capture → Create → Amplify with AI"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 8-10</li>
+                    <li><strong>Team Size:</strong> 2 students</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Create a short reel/video from photos captured during the event based on a theme.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>Capture photos within school premises</li>
+                    <li>Follow the theme announced at venue</li>
+                    <li>Use AI tools for editing</li>
+                    <li>All content must be captured during event</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Judging Criteria</h3>
+                <ul>
+                    <li>Theme Relevance — 20 marks</li>
+                    <li>Creativity — 20 marks</li>
+                    <li>AI Tools Usage — 20 marks</li>
+                    <li>Storytelling — 20 marks</li>
+                    <li>Editing — 20 marks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-            // Switch icons
-            navbarCollapse.addEventListener("show.bs.collapse", () => {
-                menuIcon.classList.add("d-none");
-                closeIcon.classList.remove("d-none");
-            });
+    <input type="checkbox" id="modal-codesprint" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-codesprint"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-codesprint">&times;</label>
+            <h2>CodeSprint - Code Clash</h2>
+            <p class="modal-tagline">"Debug. Solve. Conquer."</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 10-12</li>
+                    <li><strong>Team Size:</strong> 1 student</li>
+                    <li><strong>Mode:</strong> Online + Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Round 1: Online Hackathon on HackerRank. Round 2: Offline Debugging.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>Round 1: Solve Python problems</li>
+                    <li>Round 2: Debugging test</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Judging</h3>
+                <ul>
+                    <li>Logic — 30 marks</li>
+                    <li>Code Practices — 30 marks</li>
+                    <li>Functionality — 20 marks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-            navbarCollapse.addEventListener("hide.bs.collapse", () => {
-                closeIcon.classList.add("d-none");
-                menuIcon.classList.remove("d-none");
-            });
+    <input type="checkbox" id="modal-neuronexus" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-neuronexus"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-neuronexus">&times;</label>
+            <h2>NeuroNexus Arena</h2>
+            <p class="modal-tagline">"Enter the Grid"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> Open</li>
+                    <li><strong>Team Size:</strong> 1</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>High-intensity eSports showdown on PlayStation consoles.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>Compete in selected PS titles</li>
+                    <li>Consoles provided on-site</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-            // Close menu on link click (mobile only)
-            document.querySelectorAll(".nav-link").forEach(link => {
-                link.addEventListener("click", () => {
-                    if (navbarCollapse.classList.contains("show")) {
-                        bsCollapse.hide();
-                    }
-                });
-            });
-        });
-    </script>
+    <input type="checkbox" id="modal-chatsynapse" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-chatsynapse"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-chatsynapse">&times;</label>
+            <h2>ChatSynapse</h2>
+            <p class="modal-tagline">"Build Intelligent Conversations"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 10-12</li>
+                    <li><strong>Team Size:</strong> 1</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Design and develop a functional chatbot using no-code platforms or Python.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-webxpress" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-webxpress"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-webxpress">&times;</label>
+            <h2>WebXpress</h2>
+            <p class="modal-tagline">"Build with AI. Design the Future."</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> VII-IX</li>
+                    <li><strong>Team Size:</strong> 1</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Create a functional website using AI-assisted tools.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-digitaldharma" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-digitaldharma"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-digitaldharma">&times;</label>
+            <h2>Digital Dharma</h2>
+            <p class="modal-tagline">"AI Skills + Ethical Thinking"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 7-10</li>
+                    <li><strong>Team Size:</strong> 2</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Level 1: Prompt Engineering, Level 2: AI Ethics Analysis.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-synapsestreet" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-synapsestreet"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-synapsestreet">&times;</label>
+            <h2>Synapse Street</h2>
+            <p class="modal-tagline">"Awareness through Drama"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 5-12</li>
+                    <li><strong>Team Size:</strong> 8-10</li>
+                    <li><strong>Duration:</strong> 5-7 minutes</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Street play on cyber security and digital safety.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-neuroflash" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-neuroflash"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-neuroflash">&times;</label>
+            <h2>NeuroFlash</h2>
+            <p class="modal-tagline">"Know or Never!"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 9-12</li>
+                    <li><strong>Team Size:</strong> 2</li>
+                    <li><strong>Rounds:</strong> 2</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Exhilarating tech quiz on innovations and digital trends.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-roborealm" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-roborealm"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-roborealm">&times;</label>
+            <h2>RoboRealm</h2>
+            <p class="modal-tagline">"Build Smart. Move Fast. Think Ahead."</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> Open</li>
+                    <li><strong>Team Size:</strong> 2</li>
+                    <li><strong>Platform:</strong> Arduino</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Robotics challenge to complete arena-based challenges.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-randomaccess" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-randomaccess"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-randomaccess">&times;</label>
+            <h2>The Random Access</h2>
+            <p class="modal-tagline">"Data. Probability. Execution."</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> VII-XII</li>
+                    <li><strong>Team Size:</strong> 2</li>
+                    <li><strong>Rounds:</strong> 3</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Digital knowledge, probability, and real-world navigation.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-synapsex" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-synapsex"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-synapsex">&times;</label>
+            <h2>SynapseX</h2>
+            <p class="modal-tagline">"Innovate for Sustainability"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 7-10</li>
+                    <li><strong>Team Size:</strong> 2</li>
+                    <li><strong>Mode:</strong> Offline</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>STEM + AI solution for sustainability problems.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-datasynapse" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-datasynapse"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-datasynapse">&times;</label>
+            <h2>DataSynapse</h2>
+            <p class="modal-tagline">"Uncover Patterns. Generate Insights."</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 9-12</li>
+                    <li><strong>Team Size:</strong> 2</li>
+                    <li><strong>Duration:</strong> 60 min</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>Work with dataset to uncover patterns and generate insights.</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-memesynapse" class="modal-toggle">
+    <div class="css-modal">
+        <label class="css-modal-overlay" for="modal-memesynapse"></label>
+        <div class="css-modal-content">
+            <label class="css-modal-close" for="modal-memesynapse">&times;</label>
+            <h2>MemeSynapse</h2>
+            <p class="modal-tagline">"Humor meets AI"</p>
+            <div class="modal-section">
+                <h3>Event Details</h3>
+                <ul>
+                    <li><strong>Grades:</strong> 8-10</li>
+                    <li><strong>Team Size:</strong> 1</li>
+                    <li><strong>Mode:</strong> Online</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p>AI-powered meme creation challenge.</p>
+            </div>
+        </div>
+    </div>
     <script src="events.js"></script>
-
 </body>
 
 </html>

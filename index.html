@@ -8,9 +8,9 @@
     <title>The Digilogous</title>
 
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
 </head>
@@ -22,26 +22,30 @@
 
 
     <!-- NAVBAR -->
-
-    <nav class="navbar">
-
-        <div class="logo">
-            <a href="https://rdpschool.edu.in/" target="_blank">
-                <img src="images/schlogo.png" alt="school logo" class="digi-logo">
-            </a>
-            <a href="index.html">
-                <img src="images/center-logo.png" alt="Digilogous Logo" class="schl-logo">
-            </a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="logo d-flex align-items-center gap-2">
+                <a href="https://rdpschool.edu.in/" target="_blank">
+                    <img src="images/schlogo.png" alt="school logo" class="digi-logo" height="40">
+                </a>
+                <a href="index.html">
+                    <img src="images/center-logo.png" alt="Digilogous Logo" class="schl-logo" height="40">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#parallax-section" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#parallax-section">About</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-
     </nav>
 
 
@@ -265,46 +269,6 @@
                                     Footer End
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------>
-
-    <!-- Scripts -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const toggler = document.getElementById("navbarToggleBtn");
-            const menuIcon = toggler.querySelector(".menu-icon");
-            const closeIcon = toggler.querySelector(".close-icon");
-            const navbarCollapse = document.getElementById("navbarNav");
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-
-            // Toggle logic
-            toggler.addEventListener("click", () => {
-                if (navbarCollapse.classList.contains("show")) {
-                    bsCollapse.hide();
-                } else {
-                    bsCollapse.show();
-                }
-            });
-
-            // Switch icons
-            navbarCollapse.addEventListener("show.bs.collapse", () => {
-                menuIcon.classList.add("d-none");
-                closeIcon.classList.remove("d-none");
-            });
-
-            navbarCollapse.addEventListener("hide.bs.collapse", () => {
-                closeIcon.classList.add("d-none");
-                menuIcon.classList.remove("d-none");
-            });
-
-            // Close menu on link click (mobile only)
-            document.querySelectorAll(".nav-link").forEach(link => {
-                link.addEventListener("click", () => {
-                    if (navbarCollapse.classList.contains("show")) {
-                        bsCollapse.hide();
-                    }
-                });
-            });
-        });
-    </script>
     <script src="script.js"></script>
 
 </body>

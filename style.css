@@ -27,60 +27,90 @@ body {
     pointer-events: none;
 }
 
-/* =========================
-   GLASS NAVBAR
-========================= */
-.navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-radius: 16px;
-    background: rgba(10, 20, 40, 0.35);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(0, 255, 255, 0.25);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
-    z-index: 1000;
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar{
+
+    position:fixed !important;
+
+    top:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+    max-width:1200px;
+
+    background:rgba(10,20,40,0.85);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(0,255,255,0.2);
+
+    border-radius:18px;
+
+    padding:10px 20px;
+
+    z-index:9999;
+
+    box-shadow:
+    0 0 25px rgba(0,255,255,0.08);
+
 }
 
-.logo {
-    height: 40px;
-}
-.logo img {
-    height: 100%;
-    transition: 0.3s;
-}
-.digi-logo {
-    height: 100%;
-    filter: drop-shadow(0 0 10px rgb(0, 89, 133));
+.navbar .container{
+    padding:0;
 }
 
-.schl-logo {
-    filter: drop-shadow(0 0 10px rgb(0, 255, 238));
+.logo img{
+    transition:0.3s;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+.digi-logo{
+    filter:drop-shadow(0 0 10px rgb(0,89,133));
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+.schl-logo{
+    filter:drop-shadow(0 0 10px rgb(0,255,238));
 }
 
-.nav-links a:hover {
-    color: #00ffff;
-    text-shadow: 2px 0 cyan, -2px 0 blue;
+.navbar-nav .nav-link{
+
+    color:white !important;
+
+    font-size:1rem;
+
+    padding:8px 16px !important;
+
+    transition:0.3s;
+
 }
+
+.navbar-nav .nav-link:hover{
+
+    color:#00ffff !important;
+
+    text-shadow:
+    0 0 10px cyan;
+
+}
+
+.navbar-toggler{
+    border:1px solid rgba(0,255,255,0.5) !important;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none !important;
+}
+
+.navbar-toggler-icon{
+
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+}
+
 
 /* =========================
    HERO SECTION
@@ -878,4 +908,347 @@ footer .wave.wave4 {
 .footer-content {
   overflow: hidden;
   color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* =========================
+   LARGE TABLETS
+========================= */
+
+@media (max-width: 992px) {
+
+    .navbar {
+        width: 95%;
+        padding: 10px 15px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+        letter-spacing: 4px;
+    }
+
+    .hero-logo {
+        width: 120px;
+    }
+
+    .tribute-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .tribute-image::before {
+        width: 320px;
+        height: 320px;
+    }
+
+    .champions-section,
+    .testimonials-section,
+    .team-section {
+        padding: 80px 6%;
+    }
+
+    .testimonials-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .parallax-content {
+        width: 90%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+        top: 10px;
+        width: 94%;
+        border-radius: 14px;
+        padding: 10px 14px;
+    }
+
+    .navbar-collapse {
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .navbar-nav {
+        gap: 8px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0 !important;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 34px !important;
+    }
+
+    /* HERO */
+
+    .hero {
+        padding: 120px 20px 60px;
+        min-height: 100vh;
+    }
+
+    .hero-logo {
+        width: 95px;
+        margin-bottom: 15px;
+    }
+
+    .hero-top {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    /* TRIBUTE */
+
+    .tribute {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+
+    .tribute-container {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .tribute-text h2 {
+        font-size: 30px;
+    }
+
+    .tribute-text h4 {
+        font-size: 17px;
+    }
+
+    .tribute-text p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .tribute-image::before {
+        width: 240px;
+        height: 240px;
+    }
+
+    .tribute-image img {
+        width: 190px;
+    }
+
+    /* CHAMPIONS + GALLERY */
+
+    .champions-section {
+        padding: 70px 20px;
+    }
+
+    .memorial-title {
+        font-size: 2rem;
+    }
+
+    .champions-row {
+        gap: 20px;
+    }
+
+    .champions-row img,
+    .guests-row img,
+    .moments-row img,
+    .tech-row img,
+    .neon-border img {
+        width: 150px;
+        height: 190px;
+    }
+
+    /* PARALLAX */
+
+    .parallax-section {
+        height: auto;
+        padding: 80px 20px;
+        background-attachment: scroll;
+    }
+
+    .parallax-content {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .parallax-content h2 {
+        font-size: 30px;
+    }
+
+    .parallax-content p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* INSTRUCTIONS */
+
+    .instructions-section {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .instructions-container {
+        width: 100%;
+        padding: 40px 25px;
+        min-height: auto;
+    }
+
+    .instructions-container h2 {
+        font-size: 30px;
+    }
+
+    .instructions-btn {
+        padding: 14px 30px;
+        font-size: 16px;
+    }
+
+    /* TEAM */
+
+    .team-section {
+        padding: 80px 20px;
+    }
+
+    .team-container {
+        gap: 25px;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    .team-card img {
+        height: 260px;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-section {
+        padding: 80px 20px;
+    }
+
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+        padding: 70px 20px;
+    }
+
+    .contact-box {
+        padding: 25px 18px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    iframe {
+        height: 220px !important;
+    }
+
+    /* FOOTER */
+
+    footer {
+        height: 120px;
+    }
+
+    footer .wave {
+        height: 120px;
+        background-size: 1000px 120px;
+    }
+
+    footer .wave p {
+        margin-top: 40px;
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE DEVICES
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-top {
+        font-size: 13px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .tribute-text h2 {
+        font-size: 26px;
+    }
+
+    .tribute-text h4 {
+        font-size: 15px;
+    }
+
+    .tribute-text p {
+        font-size: 14px;
+    }
+
+    .champions-row img,
+    .guests-row img,
+    .moments-row img,
+    .tech-row img,
+    .neon-border img {
+        width: 130px;
+        height: 170px;
+    }
+
+    .instructions-container h2 {
+        font-size: 26px;
+    }
+
+    .parallax-content h2 {
+        font-size: 26px;
+    }
+
+    .memorial-title {
+        font-size: 1.8rem;
+    }
+
 }

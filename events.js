@@ -1,41 +1,74 @@
 const canvas = document.getElementById("particleCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
 
-let particles = [];
+resizeCanvas();
 
-for(let i=0;i<80;i++){
+window.addEventListener("resize", resizeCanvas);
 
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:2,
-dx:(Math.random()-0.5),
-dy:(Math.random()-0.5)
-})
+let particlesArray = [];
+
+const numberOfParticles = 140;
+
+for (let i = 0; i < numberOfParticles; i++) {
+
+    particlesArray.push({
+
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+
+        radius: Math.random() * 2.5 + 1,
+
+        speedX: (Math.random() - 0.5) * 0.8,
+        speedY: (Math.random() - 0.5) * 0.8,
+
+        opacity: Math.random() * 0.7 + 0.3
+    });
 
 }
 
-function animate(){
+function animateParticles() {
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-particles.forEach(p=>{
+    particlesArray.forEach((particle) => {
 
-p.x+=p.dx;
-p.y+=p.dy;
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
 
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle="#00f0ff";
-ctx.fill();
+        if (particle.x < 0 || particle.x > canvas.width) {
+            particle.speedX *= -1;
+        }
 
-})
+        if (particle.y < 0 || particle.y > canvas.height) {
+            particle.speedY *= -1;
+        }
 
-requestAnimationFrame(animate);
+        ctx.beginPath();
+
+        ctx.arc(
+            particle.x,
+            particle.y,
+            particle.radius,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle = `rgba(0,255,255,${particle.opacity})`;
+
+        ctx.shadowBlur = 18;
+        ctx.shadowColor = "#00f0ff";
+
+        ctx.fill();
+
+    });
+
+    requestAnimationFrame(animateParticles);
 
 }
 
-animate();
+animateParticles();
