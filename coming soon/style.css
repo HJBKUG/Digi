@@ -1,0 +1,82 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #031c3b !important;
+    color: white !important;
+    overflow-x: hidden;
+}
+
+/* =========================
+   GLOBAL PARTICLES
+========================= */
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-logo {
+    width: 150px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px cyan);
+}
+
+.hero-title {
+    font-size: 64px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 10px cyan, 0 0 30px cyan;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #c6f8ff;
+}
+
+.hero-top {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #c6f8ff;
+}
+
+/* =========================
+   AURORA CANVAS
+========================= */
+#auroraCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}

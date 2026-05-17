@@ -10,7 +10,7 @@ if (particleCanvas) {
         particleCanvas.height = document.body.scrollHeight;
         // Regenerate particles to cover new dimensions
         particles = [];
-        for (let i = 0; i < 2080; i++) {
+        for (let i = 0; i < 200; i++) {
             particles.push({
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * particleCanvas.height,
@@ -37,7 +37,7 @@ if (particleCanvas) {
 
             pctx.beginPath();
             pctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            pctx.fillStyle = "rgba(0,255,255,0.8)";
+            pctx.fillStyle = "rgb(0, 255, 255)";
             pctx.fill();
         });
 
@@ -75,21 +75,21 @@ if (auroraCanvas) {
         ctx.rect(0, bandY, auroraCanvas.width, bandHeight);
         ctx.clip();
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 8; i++) {
             let gradient = ctx.createLinearGradient(0, bandY, auroraCanvas.width, bandY + bandHeight);
             gradient.addColorStop(0, "rgba(0,255,255,0)");
-            gradient.addColorStop(0.5, "rgba(4,104,104,0.35)");
+            gradient.addColorStop(0.5, "rgba(4, 104, 104, 0.13)");
             gradient.addColorStop(1, "rgba(0,255,255,0)");
 
             ctx.strokeStyle = gradient;
-            ctx.lineWidth = 120;
+            ctx.lineWidth = 60;
             ctx.beginPath();
 
             for (let x = 0; x < auroraCanvas.width; x++) {
                 let y =
                     bandY + bandHeight / 2 +
-                    Math.sin(x * 0.002 + t + i) * 90 +
-                    Math.cos(x * 0.0015 + t + i) * 200;
+                    Math.sin(x * 0.002 + t + i) * 50 +
+                    Math.cos(x * 0.0015 + t + i) * 150;
                 ctx.lineTo(x, y);
             }
 
