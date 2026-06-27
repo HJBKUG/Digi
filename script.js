@@ -54,9 +54,14 @@ const auroraCanvas = document.getElementById("auroraCanvas");
 if (auroraCanvas) {
     const ctx = auroraCanvas.getContext("2d");
 
+    const hero = document.querySelector(".hero");
+
     function resizeAuroraCanvas() {
-        auroraCanvas.width = window.innerWidth;
-        auroraCanvas.height = window.innerHeight;
+
+        auroraCanvas.width = hero.offsetWidth;
+
+        auroraCanvas.height = hero.offsetHeight;
+
     }
 
     resizeAuroraCanvas();
@@ -114,7 +119,7 @@ let currentGalleryIndex = 0;
 
 function createGalleryControls() {
     if (document.getElementById("gallery-controls")) return;
-    
+
     const controls = document.createElement("div");
     controls.id = "gallery-controls";
     controls.innerHTML = `
@@ -135,26 +140,26 @@ function initGallery(rowSelector) {
         img.addEventListener("click", () => {
             currentGalleryImages = images;
             currentGalleryIndex = i;
-            
+
             document.querySelectorAll(".lightbox-active, .lightbox-inactive").forEach(el => {
                 el.classList.remove("lightbox-active", "lightbox-inactive");
             });
-            
-    images.forEach((img2, j) => {
-        img2.classList.add(j === i ? "lightbox-active" : "lightbox-inactive");
-    });
 
-    // Position close button near the active image
-    const activeImg = images[i];
-    const rect = activeImg.getBoundingClientRect();
-    const closeBtn = document.getElementById("closeBtn");
-    if (closeBtn) {
-        closeBtn.style.left = (rect.right - 50) + "px";
-        closeBtn.style.top = (rect.top + 10) + "px";
-        closeBtn.style.right = "auto";
-    }
+            images.forEach((img2, j) => {
+                img2.classList.add(j === i ? "lightbox-active" : "lightbox-inactive");
+            });
 
-    document.getElementById("gallery-controls").style.display = "flex";
+            // Position close button near the active image
+            const activeImg = images[i];
+            const rect = activeImg.getBoundingClientRect();
+            const closeBtn = document.getElementById("closeBtn");
+            if (closeBtn) {
+                closeBtn.style.left = (rect.right - 50) + "px";
+                closeBtn.style.top = (rect.top + 10) + "px";
+                closeBtn.style.right = "auto";
+            }
+
+            document.getElementById("gallery-controls").style.display = "flex";
         });
     });
 }
@@ -209,21 +214,21 @@ const move2 = document.querySelectorAll(".nameMove2");
 
 let offset = 0;
 
-function animateBorder(){
+function animateBorder() {
 
-offset += 0.1;
+    offset += 0.1;
 
-if(offset > 100){
-offset = 0;
-}
+    if (offset > 100) {
+        offset = 0;
+    }
 
-move1.forEach(el=>{
-el.setAttribute("startOffset", offset + "%");
-});
+    move1.forEach(el => {
+        el.setAttribute("startOffset", offset + "%");
+    });
 
-move2.forEach(el=>{
-el.setAttribute("startOffset", (offset + 50) + "%");
-});
+    move2.forEach(el => {
+        el.setAttribute("startOffset", (offset + 50) + "%");
+    });
 
     requestAnimationFrame(animateBorder);
 }
