@@ -348,11 +348,10 @@ body{
 .hero-gradient {
     background: linear-gradient(90deg,
             #2563EB,
-            #60A5FA,
-            #7C3AED);
+            #b760fa,
+            #3a3aed);
 
     background-size: 200%;
-    animation: gradientMove 6s linear infinite;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
