@@ -38,7 +38,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                     <li class="nav-item"><a href="index.html#parallax-section" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
                     <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
@@ -121,7 +121,9 @@
     <section class="champions-section">
 
         <h2 class="memorial-title">Tech Champions</h2>
-
+        <div id="lightbox-overlay">
+            <img id="lightbox-img" src="">
+        </div>
         <div class="champions-row">
 
             <img src="images/1.png" class="neon-border">
@@ -178,28 +180,105 @@
         </div>
     </section>
 
-    <section class="instructions-section">
+    <section class="instructions-section" id="instructions">
 
-        <div class="instructions-container">
+        <div class="instructions-box">
+
+            <div class="instructions-icon">
+                <i class="bi bi-journal-text"></i>
+            </div>
+
             <h2>General Instructions</h2>
 
-            <a href="pdf/general-instructions.pdf" target="_blank" class="instructions-btn">
-                Details
-            </a>
+            <p>
+                Please read all the instructions carefully before participating in any event.
+                Ensure timely reporting, proper discipline, and adherence to guidelines.
+            </p>
+
+            <div class="instructions-actions">
+
+                <button class="instructions-btn" id="previewBtn">
+                    Preview
+                </button>
+
+                <a href="pdf/general-instructions.pdf" download class="instructions-btn download-btn">
+                    Download
+                </a>
+
+            </div>
+
         </div>
 
     </section>
 
     <section class="testimonials-section">
 
-        <h2 class="memorial-title">Testimonials</h2>
+        <div class="testimonial-header">
 
-        <div class="testimonials-container">
+            <h2 class="section-title">
+                Testimonials
+            </h2>
 
-            <img src="images/KKAggarwal.png" class="testimonial-img">
-            <img src="images/Palak.png" class="testimonial-img">
-            <img src="images/Ramjass.png" class="testimonial-img">
-            <img src="images/tareque.png" class="testimonial-img">
+            <p class="section-subtitle">
+                Experiences shared by mentors, guests, and participants of Digilogous.
+            </p>
+
+        </div>
+
+        <div class="testimonial-wrapper">
+
+            <div class="testimonial-track">
+
+                <div class="testimonial-card">
+                    <img src="images/KKAggarwal.png">
+                    <h3>Dr. K.K. Aggarwal</h3>
+                    <p>A perfect platform for young innovators.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/Palak.png">
+                    <h3>Ms. Palak</h3>
+                    <p>Creativity and coding blend beautifully here.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/Ramjass.png">
+                    <h3>Mr. Ram Jass</h3>
+                    <p>Truly inspiring student innovation.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/tareque.png">
+                    <h3>Mr. Tareque</h3>
+                    <p>One of the best tech events experience.</p>
+                </div>
+
+                <!-- duplicate set for loop -->
+                <div class="testimonial-card">
+                    <img src="images/KKAggarwal.png">
+                    <h3>Dr. K.K. Aggarwal</h3>
+                    <p>A perfect platform for young innovators.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/Palak.png">
+                    <h3>Ms. Palak</h3>
+                    <p>Creativity and coding blend beautifully here.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/Ramjass.png">
+                    <h3>Mr. Ram Jass</h3>
+                    <p>Truly inspiring student innovation.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/tareque.png">
+                    <h3>Mr. Tareque</h3>
+                    <p>One of the best tech events experience.</p>
+                </div>
+
+            </div>
 
         </div>
 
@@ -244,24 +323,46 @@
             </div>
         </div>
     </section>
+
+    <div class="pdf-modal" id="pdfModal">
+
+        <div class="pdf-modal-content">
+
+            <button class="pdf-close" id="closePdf">✕</button>
+
+            <iframe src="pdf/general-instructions.pdf"></iframe>
+
+        </div>
+
+    </div>
     <!---------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
                                     Footer Start
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------>
-    <footer>
-        <div class="wave wave1">
-            <div class="footer-content">
-                <p>
-                    Copyright &#169; Rukmini Devi Public School, Pitampura
-                    <br>
-                    Developed By : Harman Singh Jassal & Arjan Singh Jassal
-                </p>
-            </div>
+    <footer class="wave-footer">
+
+        <div class="waves">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path class="wave wave1"
+                    d="M0,160 C300,220 600,100 900,160 C1200,220 1350,140 1440,160 L1440,320 L0,320 Z"></path>
+
+                <path class="wave wave2"
+                    d="M0,180 C300,240 600,120 900,180 C1200,240 1350,160 1440,180 L1440,320 L0,320 Z"></path>
+
+                <path class="wave wave3"
+                    d="M0,200 C300,260 600,140 900,200 C1200,260 1350,180 1440,200 L1440,320 L0,320 Z"></path>
+            </svg>
         </div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
+
+        <div class="footer-content">
+            <p>
+                Copyright © Rukmini Devi Public School, Pitampura
+                <br>
+                Developed By : Harman Singh Jassal & Arjan Singh Jassal
+            </p>
+        </div>
+
     </footer>
     <!---------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------

@@ -37,7 +37,7 @@ if (particleCanvas) {
 
             pctx.beginPath();
             pctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            pctx.fillStyle = "rgb(0, 255, 255)";
+            pctx.fillStyle = "rgba(37, 99, 235, 0.85)";
             pctx.fill();
         });
 
@@ -57,11 +57,8 @@ if (auroraCanvas) {
     const hero = document.querySelector(".hero");
 
     function resizeAuroraCanvas() {
-
-        auroraCanvas.width = hero.offsetWidth;
-
-        auroraCanvas.height = hero.offsetHeight;
-
+        auroraCanvas.width = window.innerWidth;
+        auroraCanvas.height = window.innerHeight;
     }
 
     resizeAuroraCanvas();
@@ -70,6 +67,7 @@ if (auroraCanvas) {
     let t = 0;
 
     function drawAurora() {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, auroraCanvas.width, auroraCanvas.height);
 
         const bandHeight = 1200;
@@ -113,95 +111,79 @@ if (auroraCanvas) {
    TECH CHAMPIONS GALLERY INTERACTION
    ========================= */
 
-// Global state for lightbox
-let currentGalleryImages = null;
-let currentGalleryIndex = 0;
+const images = document.querySelectorAll(".champions-section img");
 
-function createGalleryControls() {
-    if (document.getElementById("gallery-controls")) return;
+const overlay = document.getElementById("gp-overlay");
+const imgBox = document.getElementById("gp-img");
 
-    const controls = document.createElement("div");
-    controls.id = "gallery-controls";
-    controls.innerHTML = `
-        <button id="prevBtn" class="gallery-nav">&#10094;</button>
-        <button id="closeBtn">&#10006;</button>
-        <button id="nextBtn" class="gallery-nav">&#10095;</button>
-    `;
-    document.body.appendChild(controls);
-}
+const btnClose = document.getElementById("gp-close");
+const btnPrev = document.getElementById("gp-prev");
+const btnNext = document.getElementById("gp-next");
 
-function initGallery(rowSelector) {
-    const images = document.querySelectorAll(rowSelector);
-    if (!images.length) return;
+let index = 0;
 
-    createGalleryControls();
-
-    images.forEach((img, i) => {
-        img.addEventListener("click", () => {
-            currentGalleryImages = images;
-            currentGalleryIndex = i;
-
-            document.querySelectorAll(".lightbox-active, .lightbox-inactive").forEach(el => {
-                el.classList.remove("lightbox-active", "lightbox-inactive");
-            });
-
-            images.forEach((img2, j) => {
-                img2.classList.add(j === i ? "lightbox-active" : "lightbox-inactive");
-            });
-
-            // Position close button near the active image
-            const activeImg = images[i];
-            const rect = activeImg.getBoundingClientRect();
-            const closeBtn = document.getElementById("closeBtn");
-            if (closeBtn) {
-                closeBtn.style.left = (rect.right - 50) + "px";
-                closeBtn.style.top = (rect.top + 10) + "px";
-                closeBtn.style.right = "auto";
-            }
-
-            document.getElementById("gallery-controls").style.display = "flex";
-        });
-    });
-}
-
-// Initialize galleries
-initGallery(".guests-row img");
-initGallery(".moments-row img");
-initGallery(".champions-row img");
-
-// Global control handlers
-document.getElementById("closeBtn")?.addEventListener("click", () => {
-    document.querySelectorAll(".lightbox-active, .lightbox-inactive").forEach(img => {
-        img.classList.remove("lightbox-active", "lightbox-inactive");
-    });
-    document.getElementById("gallery-controls").style.display = "none";
-    currentGalleryImages = null;
-});
-
-document.getElementById("nextBtn")?.addEventListener("click", () => {
-    if (!currentGalleryImages) return;
-    currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
-    currentGalleryImages.forEach((img, i) => {
-        img.classList.remove("lightbox-active", "lightbox-inactive");
-        img.classList.add(i === currentGalleryIndex ? "lightbox-active" : "lightbox-inactive");
+// OPEN
+images.forEach((img, i) => {
+    img.addEventListener("click", () => {
+        index = i;
+        openGallery();
     });
 });
 
-document.getElementById("prevBtn")?.addEventListener("click", () => {
-    if (!currentGalleryImages) return;
-    currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-    currentGalleryImages.forEach((img, i) => {
-        img.classList.remove("lightbox-active", "lightbox-inactive");
-        img.classList.add(i === currentGalleryIndex ? "lightbox-active" : "lightbox-inactive");
-    });
-    // Update close button position
-    const activeImg = currentGalleryImages[currentGalleryIndex];
-    const rect = activeImg.getBoundingClientRect();
-    const closeBtn = document.getElementById("closeBtn");
-    if (closeBtn) {
-        closeBtn.style.left = (rect.right - 50) + "px";
-        closeBtn.style.top = (rect.top + 10) + "px";
-    }
+function openGallery(){
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    showImage();
+}
+
+function showImage(){
+    imgBox.src = images[index].src;
+}
+
+// CLOSE
+function closeGallery(){
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+btnClose.addEventListener("click", closeGallery);
+
+// NEXT
+function nextImage(){
+    index = (index + 1) % images.length;
+    showImage();
+}
+
+// PREV
+function prevImage(){
+    index = (index - 1 + images.length) % images.length;
+    showImage();
+}
+
+btnNext.addEventListener("click", nextImage);
+btnPrev.addEventListener("click", prevImage);
+
+// KEYBOARD
+document.addEventListener("keydown", (e) => {
+    if(!overlay.classList.contains("active")) return;
+
+    if(e.key === "Escape") closeGallery();
+    if(e.key === "ArrowRight") nextImage();
+    if(e.key === "ArrowLeft") prevImage();
+});
+
+// SWIPE (mobile)
+let startX = 0;
+
+overlay.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+overlay.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+
+    if(startX - endX > 50) nextImage();
+    if(endX - startX > 50) prevImage();
 });
 
 
@@ -234,3 +216,30 @@ function animateBorder() {
 }
 
 animateBorder();
+
+const track = document.querySelector(".testimonial-track");
+
+if(track){
+    track.style.transform = "translate3d(0,0,0)";
+}
+function typeQuotes(){
+    const quotes = document.querySelectorAll(".quote");
+
+    quotes.forEach(q => {
+        const text = q.innerText;
+        q.innerText = "";
+        let i = 0;
+
+        function typing(){
+            if(i < text.length){
+                q.innerText += text.charAt(i);
+                i++;
+                setTimeout(typing, 20);
+            }
+        }
+
+        typing();
+    });
+}
+
+window.addEventListener("load", typeQuotes);

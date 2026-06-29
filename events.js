@@ -58,10 +58,10 @@ function animateParticles() {
             Math.PI * 2
         );
 
-        ctx.fillStyle = `rgba(0,255,255,${particle.opacity})`;
+        ctx.fillStyle = `rgba(255,107,181,${particle.opacity})`;
 
         ctx.shadowBlur = 18;
-        ctx.shadowColor = "#00f0ff";
+        ctx.shadowColor = "#8b5cf6";
 
         ctx.fill();
 
@@ -72,3 +72,79 @@ function animateParticles() {
 }
 
 animateParticles();
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(".event-card").forEach(card => {
+
+    observer.observe(card);
+
+});
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        const navbar = document.querySelector(".navbar-collapse");
+
+        if (navbar.classList.contains("show")) {
+
+            bootstrap.Collapse.getOrCreateInstance(navbar).hide();
+
+        }
+
+    });
+
+});
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+        document.querySelectorAll(".modal-toggle").forEach(box => {
+            box.checked = false;
+        });
+
+        updateScrollLock(); // ⭐ important fix
+    }
+});
+const modals = document.querySelectorAll(".modal-toggle");
+
+modals.forEach(box => {
+    box.addEventListener("change", () => {
+        updateScrollLock();
+    });
+});
+document.querySelectorAll(".event-btn").forEach(btn => {
+
+    btn.addEventListener("click", function (e) {
+
+        const ripple = document.createElement("span");
+
+        ripple.className = "ripple";
+
+        ripple.style.left = e.offsetX + "px";
+
+        ripple.style.top = e.offsetY + "px";
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+
+            ripple.remove();
+
+        }, 600);
+
+    });
+
+});
