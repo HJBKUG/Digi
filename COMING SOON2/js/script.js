@@ -391,3 +391,121 @@ if('ontouchstart' in window){
         });
     });
 }
+
+/*==========================================
+REGISTRATION MODAL
+==================================*/
+
+const registerBtn = document.getElementById("registerBtn");
+const registerModal = document.getElementById("registerModal");
+const modalClose = document.getElementById("modalClose");
+const registerForm = document.getElementById("registerForm");
+const formMessage = document.getElementById("formMessage");
+const submitBtn = document.getElementById("submitBtn");
+
+// EmailJS configuration - Replace with your actual values from emailjs.com
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+// Open modal
+if(registerBtn){
+    registerBtn.addEventListener("click", function(e){
+        e.preventDefault();
+        registerModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
+}
+
+// Close modal
+if(modalClose){
+    modalClose.addEventListener("click", closeModal);
+}
+
+// Close on overlay click
+if(registerModal){
+    registerModal.addEventListener("click", function(e){
+        if(e.target === registerModal){
+            closeModal();
+        }
+    });
+}
+
+// Close on Escape key
+document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && registerModal && registerModal.classList.contains("active")){
+        closeModal();
+    }
+});
+
+function closeModal(){
+    if(registerModal){
+        registerModal.classList.remove("active");
+        document.body.style.overflow = "";
+        if(registerForm){
+            registerForm.reset();
+        }
+        if(formMessage){
+            formMessage.textContent = "";
+            formMessage.className = "form-message";
+        }
+    }
+}
+
+// Form submission - sends email via EmailJS
+if(registerForm){
+    registerForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const school = document.getElementById("school").value;
+        const grade = document.getElementById("grade").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+
+        // Show loading state
+        submitBtn.classList.add("loading");
+
+        // Check if EmailJS is configured
+        if(EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY" ||
+           EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID" ||
+           EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID"){
+
+            // Demo mode - show message
+            setTimeout(function(){
+                formMessage.innerHTML = "Demo mode: To send emails, configure EmailJS:<br>1. Go to <a href='https://emailjs.com' target='_blank'>emailjs.com</a><br>2. Create account and verify digi.ct.personal@gmail.com<br>3. Create email service and template<br>4. Replace the config values in js/script.js";
+                formMessage.className = "form-message error";
+                submitBtn.classList.remove("loading");
+            }, 500);
+            return;
+        }
+
+        // Initialize EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // Send email
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            from_name: name,
+            from_email: email,
+            school: school,
+            grade: grade,
+            phone: phone,
+            message: message,
+            to_email: "digi.ct.personal@gmail.com"
+        }).then(function(response){
+            formMessage.textContent = "Registration sent successfully! We'll contact you soon.";
+            formMessage.className = "form-message success";
+            registerForm.reset();
+            // Close modal after 2 seconds
+            setTimeout(closeModal, 2000);
+        }).catch(function(error){
+            formMessage.textContent = "Failed to send. Please check your EmailJS configuration.";
+            formMessage.className = "form-message error";
+            console.error("EmailJS error:", error);
+        }).finally(function(){
+            submitBtn.classList.remove("loading");
+        });
+    });
+}
