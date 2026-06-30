@@ -22,11 +22,10 @@ body{
     font-family:'Inter',sans-serif;
 
     background:
-    radial-gradient(circle at 10% 10%,rgba(37,99,235,.18),transparent 35%),
-    radial-gradient(circle at 90% 20%,rgba(96,165,250,.12),transparent 35%),
-    radial-gradient(circle at 50% 100%,rgba(37,99,235,.10),transparent 45%),
-
-    linear-gradient(180deg,#070b18,#0b1230);
+    radial-gradient(circle at 50% 20%, rgba(111, 77, 255, .22), transparent 35%),
+    radial-gradient(circle at 20% 80%, rgba(79, 109, 255, .15), transparent 40%),
+    radial-gradient(circle at 80% 75%, rgba(255, 96, 170, .12), transparent 35%),
+    linear-gradient(180deg, #050712 0%, #0d1430 45%, #050915 100%);
 
     color:var(--text)!important;
 
@@ -232,17 +231,6 @@ main{
     display:flex;
     flex-direction:column;
     align-items:center;
-}
-.hero-gradient {
-    background: linear-gradient(90deg,
-            #2563EB,
-            #b760fa,
-            #3a3aed);
-
-    background-size: 200%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .subtitle-eyebrow{
