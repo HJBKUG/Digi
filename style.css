@@ -88,6 +88,10 @@ body{
     pointer-events: none;
 
 }
+body{
+    background:#0d081d !important;
+    color:white;
+}
 
 #auroraCanvas {
     position: absolute;
@@ -483,11 +487,11 @@ body{
     background:
 
         radial-gradient(circle at top left,
-            rgba(113, 68, 255, .18),
+            rgb(20, 0, 84),
             transparent 35%),
 
         radial-gradient(circle at bottom right,
-            rgba(255, 94, 167, .12),
+            rgba(155, 0, 70, 0.521),
             transparent 30%);
 
     pointer-events: none;
@@ -510,7 +514,7 @@ body{
     line-height: 1;
 
     background: linear-gradient(90deg,
-            #ffffff,
+            #0e86c2,
             #8b7cff,
             #ff78bc);
 
@@ -568,13 +572,11 @@ body{
 
     height: 430px;
 
-    background: conic-gradient(#4D6DFF,
+    background: linear-gradient(
+        #001b92,
+        #4D6DFF);
 
-            #7144FF,
-
-            #4D6DFF);
-
-    filter: blur(35px);
+    filter: blur(125px);
 
     opacity: .55;
 
@@ -750,7 +752,7 @@ body{
     letter-spacing: 1px;
 
     background: linear-gradient(90deg,
-            #ffffff,
+            #4d65a6,
             #9a8dff,
             #ff81c6);
 

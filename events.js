@@ -59,7 +59,7 @@ function animateParticles() {
         );
 
         ctx.fillStyle = `rgba(255,107,181,${particle.opacity})`;
-
+        
         ctx.shadowBlur = 18;
         ctx.shadowColor = "#8b5cf6";
 

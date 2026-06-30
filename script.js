@@ -113,78 +113,80 @@ if (auroraCanvas) {
 
 const images = document.querySelectorAll(".champions-section img");
 
-const overlay = document.getElementById("gp-overlay");
-const imgBox = document.getElementById("gp-img");
+if (images.length > 0) {
+    const overlay = document.getElementById("gp-overlay");
+    const imgBox = document.getElementById("gp-img");
 
-const btnClose = document.getElementById("gp-close");
-const btnPrev = document.getElementById("gp-prev");
-const btnNext = document.getElementById("gp-next");
+    const btnClose = document.getElementById("gp-close");
+    const btnPrev = document.getElementById("gp-prev");
+    const btnNext = document.getElementById("gp-next");
 
-let index = 0;
+    let index = 0;
 
-// OPEN
-images.forEach((img, i) => {
-    img.addEventListener("click", () => {
-        index = i;
-        openGallery();
+    // OPEN
+    images.forEach((img, i) => {
+        img.addEventListener("click", () => {
+            index = i;
+            openGallery();
+        });
     });
-});
 
-function openGallery(){
-    overlay.classList.add("active");
-    document.body.style.overflow = "hidden";
-    showImage();
+    function openGallery(){
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+        showImage();
+    }
+
+    function showImage(){
+        imgBox.src = images[index].src;
+    }
+
+    // CLOSE
+    function closeGallery(){
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    btnClose.addEventListener("click", closeGallery);
+
+    // NEXT
+    function nextImage(){
+        index = (index + 1) % images.length;
+        showImage();
+    }
+
+    // PREV
+    function prevImage(){
+        index = (index - 1 + images.length) % images.length;
+        showImage();
+    }
+
+    btnNext.addEventListener("click", nextImage);
+    btnPrev.addEventListener("click", prevImage);
+
+    // KEYBOARD
+    document.addEventListener("keydown", (e) => {
+        if(!overlay.classList.contains("active")) return;
+
+        if(e.key === "Escape") closeGallery();
+        if(e.key === "ArrowRight") nextImage();
+        if(e.key === "ArrowLeft") prevImage();
+    });
+
+    // SWIPE (mobile)
+    let startX = 0;
+
+    overlay.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    overlay.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+
+        if(startX - endX > 50) nextImage();
+        if(endX - startX > 50) prevImage();
+    });
 }
-
-function showImage(){
-    imgBox.src = images[index].src;
-}
-
-// CLOSE
-function closeGallery(){
-    overlay.classList.remove("active");
-    document.body.style.overflow = "";
-}
-
-btnClose.addEventListener("click", closeGallery);
-
-// NEXT
-function nextImage(){
-    index = (index + 1) % images.length;
-    showImage();
-}
-
-// PREV
-function prevImage(){
-    index = (index - 1 + images.length) % images.length;
-    showImage();
-}
-
-btnNext.addEventListener("click", nextImage);
-btnPrev.addEventListener("click", prevImage);
-
-// KEYBOARD
-document.addEventListener("keydown", (e) => {
-    if(!overlay.classList.contains("active")) return;
-
-    if(e.key === "Escape") closeGallery();
-    if(e.key === "ArrowRight") nextImage();
-    if(e.key === "ArrowLeft") prevImage();
-});
-
-// SWIPE (mobile)
-let startX = 0;
-
-overlay.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-});
-
-overlay.addEventListener("touchend", (e) => {
-    let endX = e.changedTouches[0].clientX;
-
-    if(startX - endX > 50) nextImage();
-    if(endX - startX > 50) prevImage();
-});
 
 
 /* =========================
@@ -222,24 +224,26 @@ const track = document.querySelector(".testimonial-track");
 if(track){
     track.style.transform = "translate3d(0,0,0)";
 }
-function typeQuotes(){
-    const quotes = document.querySelectorAll(".quote");
 
-    quotes.forEach(q => {
-        const text = q.innerText;
-        q.innerText = "";
-        let i = 0;
+/* =========================
+   TEAM CARD INTERSECTION OBSERVER
+   ========================= */
+const teamObserver = new IntersectionObserver((entries) => {
 
-        function typing(){
-            if(i < text.length){
-                q.innerText += text.charAt(i);
-                i++;
-                setTimeout(typing, 20);
-            }
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
         }
 
-        typing();
     });
-}
 
-window.addEventListener("load", typeQuotes);
+},{
+    threshold:0.2
+});
+
+document.querySelectorAll(".team-card").forEach(card => {
+    teamObserver.observe(card);
+});
