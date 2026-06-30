@@ -215,12 +215,13 @@ main{
     position:relative;
     z-index:1;
     min-height:100vh;
+    width:100%;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:140px 6vw 80px;
+    padding:40px 6vw 80px;
 }
 
 .hero-content{
@@ -410,10 +411,10 @@ main{
 
 .cta-row{
     display:flex;
-    gap:1rem;
+    gap:0.2rem;
     flex-wrap:wrap;
     justify-content:center;
-    margin-top:2.2rem;
+    /* margin-top:2.2rem; */
 }
 
 .btn{
@@ -428,7 +429,7 @@ main{
     transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
     display:inline-flex;
     align-items:center;
-    gap:.5rem;
+    gap:.2rem;
     border:none;
     position:relative;
     overflow:hidden;
