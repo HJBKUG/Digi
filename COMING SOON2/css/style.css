@@ -456,6 +456,21 @@ main{
 .btn-primary:hover i{
     transform:translateX(4px);
 }
+.hero-number {
+    margin-left: 26px;
+}
+
+.hero-gradient {
+    background: linear-gradient(90deg,
+            #2563EB,
+            #b760fa,
+            #3a3aed);
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /*==============================
 SECTIONS
