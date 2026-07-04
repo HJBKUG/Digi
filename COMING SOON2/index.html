@@ -7,6 +7,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdnjs.cloudflare.com;
+        style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline';
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        connect-src 'self' https://*.workers.dev;
+        img-src 'self' data:;
+        base-uri 'self';
+        form-action 'self' https://*.workers.dev;
+    ">
+
     <title>Digilogous 12.0 | Coming Soon</title>
 
     <link rel="icon" href="logo.png">
@@ -45,7 +56,7 @@
 
             <p class="eyebrow">
 
-                Rukmini Devi Public School, Pitampura <span>·</span> Presents
+                Rukmini Devi Public School <span>·</span> Presents
 
             </p>
 
@@ -83,6 +94,8 @@
 
             </div>
 
+            <p class="coming-soon-text">Coming Soon</p>
+
             <div class="cta-row">
 
                 <a href="#info" class="btn btn-primary" id="registerBtn">
@@ -117,17 +130,9 @@
 
                 <div class="form-group">
 
-                    <label for="name">Full Name *</label>
-
-                    <input type="text" id="name" name="name" required>
-
-                </div>
-
-                <div class="form-group">
-
                     <label for="email">Email Address *</label>
 
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" maxlength="254" required>
 
                 </div>
 
@@ -135,23 +140,15 @@
 
                     <label for="school">School Name *</label>
 
-                    <input type="text" id="school" name="school" required>
+                    <input type="text" id="school" name="school" maxlength="150" required>
 
                 </div>
 
                 <div class="form-group">
 
-                    <label for="grade">Grade/Class</label>
+                    <label for="phone">Phone Number *</label>
 
-                    <input type="text" id="grade" name="grade">
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="phone">Phone Number</label>
-
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" maxlength="20" required>
 
                 </div>
 
@@ -159,7 +156,7 @@
 
                     <label for="message">Message / Questions</label>
 
-                    <textarea id="message" name="message" rows="3"></textarea>
+                    <textarea id="message" name="message" rows="3" maxlength="1000"></textarea>
 
                 </div>
 
@@ -267,8 +264,6 @@
         </p>
 
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script src="js/script.js"></script>
 

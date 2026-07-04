@@ -270,8 +270,8 @@ document.addEventListener("mousemove",function(e){
 });
 
 function animateCursor(){
-    ringX += (cursorX - ringX)*.12;
-    ringY += (cursorY - ringY)*.12;
+    ringX += (cursorX - ringX)*.25;
+    ringY += (cursorY - ringY)*.25;
     cursorRing.style.left = ringX+"px";
     cursorRing.style.top = ringY+"px";
     requestAnimationFrame(animateCursor);
@@ -403,10 +403,13 @@ const registerForm = document.getElementById("registerForm");
 const formMessage = document.getElementById("formMessage");
 const submitBtn = document.getElementById("submitBtn");
 
-// EmailJS configuration - Replace with your actual values from emailjs.com
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+// Cloudflare Worker URL — deploy backend/ then paste your workers.dev URL here
+const API_URL = "https://digilogous-backend.jassalarjansingh.workers.dev";
+
+// ─── COOLDOWN ──────────────────────────────────────────────
+const SUBMIT_COOLDOWN_MS = 10000; // 10 seconds between submissions
+let lastSubmitTime       = 0;
+// ───────────────────────────────────────────────────────────
 
 // Open modal
 if(registerBtn){
@@ -449,63 +452,161 @@ function closeModal(){
             formMessage.textContent = "";
             formMessage.className = "form-message";
         }
+        // Re-enable button on close
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("loading");
     }
 }
 
-// Form submission - sends email via EmailJS
+// ─── SECURITY: SANITIZATION ────────────────────────────────
+
+function sanitize(str){
+    if(typeof str !== "string") return "";
+    return str
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#x27;")
+        .replace(/\//g, "&#x2F;");
+}
+
+// ─── SECURITY: VALIDATION ──────────────────────────────────
+
+function isValidEmail(email){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhone(phone){
+    if(!phone) return true; // optional
+    return /^[\d\s\-\+\(\)]{7,20}$/.test(phone);
+}
+
+function exceedsMaxLength(fields){
+    var limits = {
+        email: 254, school: 150,
+        phone: 20, message: 1000
+    };
+    for(var key in fields){
+        if(fields.hasOwnProperty(key) && fields[key].length > limits[key]){
+            return true;
+        }
+    }
+    return false;
+}
+
+// ─── HELPERS ───────────────────────────────────────────────
+
+function getFormData(){
+    var raw = {
+        email:   document.getElementById("email").value.trim(),
+        school:  document.getElementById("school").value.trim(),
+        phone:   document.getElementById("phone").value.trim(),
+        message: document.getElementById("message").value.trim()
+    };
+
+    // Length check
+    if(exceedsMaxLength(raw)){
+        showMessage("One or more fields exceed the maximum length.", "error");
+        return null;
+    }
+
+    // Required fields
+    if(!raw.email || !raw.school || !raw.phone){
+        showMessage("Please fill in all required fields.", "error");
+        return null;
+    }
+
+    // Email format
+    if(!isValidEmail(raw.email)){
+        showMessage("Please enter a valid email address.", "error");
+        return null;
+    }
+
+    // Phone format (optional)
+    if(raw.phone && !isValidPhone(raw.phone)){
+        showMessage("Please enter a valid phone number (digits, spaces, +, -, parentheses).", "error");
+        return null;
+    }
+
+    // Sanitize all values before storing/sending
+    var sanitized = {};
+    for(var key in raw){
+        if(raw.hasOwnProperty(key)){
+            sanitized[key] = sanitize(raw[key]);
+        }
+    }
+    sanitized.registeredAt = new Date().toISOString();
+
+    return sanitized;
+}
+
+function showMessage(text, type){
+    formMessage.textContent = text;
+    formMessage.className   = "form-message " + type;
+}
+
+// ─── SEND TO API ──────────────────────────────────────────
+
+function submitToAPI(data){
+    return fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    }).then(function(res){
+        return res.json().then(function(body){
+            if(!res.ok || !body.success){
+                throw new Error(body.message || "Server error");
+            }
+            return body;
+        });
+    });
+}
+
+// ─── SECURITY: COOLDOWN CHECK ──────────────────────────────
+
+function isOnCooldown(){
+    var elapsed = Date.now() - lastSubmitTime;
+    if(elapsed < SUBMIT_COOLDOWN_MS && lastSubmitTime > 0){
+        var remaining = Math.ceil((SUBMIT_COOLDOWN_MS - elapsed) / 1000);
+        showMessage("Please wait " + remaining + " second" + (remaining > 1 ? "s" : "") + " before submitting again.", "error");
+        return true;
+    }
+    return false;
+}
+
+// ─── FORM SUBMISSION ───────────────────────────────────────
+
 if(registerForm){
     registerForm.addEventListener("submit", function(e){
         e.preventDefault();
 
-        // Get form values
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const school = document.getElementById("school").value;
-        const grade = document.getElementById("grade").value;
-        const phone = document.getElementById("phone").value;
-        const message = document.getElementById("message").value;
+        // ── Cooldown ──
+        if(isOnCooldown()) return;
 
-        // Show loading state
+        // ── Validate & sanitize ──
+        var data = getFormData();
+        if(!data) return;
+
+        // ── Disable button ──
+        submitBtn.disabled   = true;
         submitBtn.classList.add("loading");
+        showMessage("", "");
 
-        // Check if EmailJS is configured
-        if(EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY" ||
-           EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID" ||
-           EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID"){
-
-            // Demo mode - show message
-            setTimeout(function(){
-                formMessage.innerHTML = "Demo mode: To send emails, configure EmailJS:<br>1. Go to <a href='https://emailjs.com' target='_blank'>emailjs.com</a><br>2. Create account and verify digi.ct.personal@gmail.com<br>3. Create email service and template<br>4. Replace the config values in js/script.js";
-                formMessage.className = "form-message error";
+        // ── Send to API ──
+        submitToAPI(data)
+            .then(function(){
+                showMessage("Registration sent successfully! We'll contact you soon.", "success");
+                registerForm.reset();
+                lastSubmitTime = Date.now();
+                setTimeout(closeModal, 2000);
+            })
+            .catch(function(err){
+                showMessage(err.message || "Something went wrong. Please try again.", "error");
+                console.error("Worker error:", err);
+            })
+            .finally(function(){
+                submitBtn.disabled   = false;
                 submitBtn.classList.remove("loading");
-            }, 500);
-            return;
-        }
-
-        // Initialize EmailJS
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-
-        // Send email
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            from_name: name,
-            from_email: email,
-            school: school,
-            grade: grade,
-            phone: phone,
-            message: message,
-            to_email: "digi.ct.personal@gmail.com"
-        }).then(function(response){
-            formMessage.textContent = "Registration sent successfully! We'll contact you soon.";
-            formMessage.className = "form-message success";
-            registerForm.reset();
-            // Close modal after 2 seconds
-            setTimeout(closeModal, 2000);
-        }).catch(function(error){
-            formMessage.textContent = "Failed to send. Please check your EmailJS configuration.";
-            formMessage.className = "form-message error";
-            console.error("EmailJS error:", error);
-        }).finally(function(){
-            submitBtn.classList.remove("loading");
-        });
+            });
     });
 }
