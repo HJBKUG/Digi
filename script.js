@@ -131,18 +131,18 @@ if (images.length > 0) {
         });
     });
 
-    function openGallery(){
+    function openGallery() {
         overlay.classList.add("active");
         document.body.style.overflow = "hidden";
         showImage();
     }
 
-    function showImage(){
+    function showImage() {
         imgBox.src = images[index].src;
     }
 
     // CLOSE
-    function closeGallery(){
+    function closeGallery() {
         overlay.classList.remove("active");
         document.body.style.overflow = "";
     }
@@ -150,13 +150,13 @@ if (images.length > 0) {
     btnClose.addEventListener("click", closeGallery);
 
     // NEXT
-    function nextImage(){
+    function nextImage() {
         index = (index + 1) % images.length;
         showImage();
     }
 
     // PREV
-    function prevImage(){
+    function prevImage() {
         index = (index - 1 + images.length) % images.length;
         showImage();
     }
@@ -166,11 +166,11 @@ if (images.length > 0) {
 
     // KEYBOARD
     document.addEventListener("keydown", (e) => {
-        if(!overlay.classList.contains("active")) return;
+        if (!overlay.classList.contains("active")) return;
 
-        if(e.key === "Escape") closeGallery();
-        if(e.key === "ArrowRight") nextImage();
-        if(e.key === "ArrowLeft") prevImage();
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowRight") nextImage();
+        if (e.key === "ArrowLeft") prevImage();
     });
 
     // SWIPE (mobile)
@@ -183,8 +183,8 @@ if (images.length > 0) {
     overlay.addEventListener("touchend", (e) => {
         let endX = e.changedTouches[0].clientX;
 
-        if(startX - endX > 50) nextImage();
-        if(endX - startX > 50) prevImage();
+        if (startX - endX > 50) nextImage();
+        if (endX - startX > 50) prevImage();
     });
 }
 
@@ -221,7 +221,7 @@ animateBorder();
 
 const track = document.querySelector(".testimonial-track");
 
-if(track){
+if (track) {
     track.style.transform = "translate3d(0,0,0)";
 }
 
@@ -232,7 +232,7 @@ const teamObserver = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
 
             entry.target.classList.add("show");
 
@@ -240,8 +240,8 @@ const teamObserver = new IntersectionObserver((entries) => {
 
     });
 
-},{
-    threshold:0.2
+}, {
+    threshold: 0.2
 });
 
 document.querySelectorAll(".team-card").forEach(card => {
