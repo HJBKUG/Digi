@@ -791,6 +791,62 @@ body{
         0 0 18px rgba(37, 99, 235, .18);
 }
 
+/* =========================
+   GUESTS & MOMENTS — 4 IMAGES PER ROW
+========================= */
+
+.guests-section .guests-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.guests-section .guests-row img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: .45s;
+    background: #171c38;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .45),
+        0 0 18px rgba(37, 99, 235, .18);
+}
+
+.guests-section .guests-row img:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, .55),
+        0 0 26px rgba(37, 99, 235, .30);
+}
+
+@media (max-width: 992px) {
+    .guests-section .guests-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .guests-section .guests-row img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .guests-section .guests-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .guests-section .guests-row img {
+        height: 150px;
+    }
+}
+
     /* =========================
    GRADIENT FRAME
 ========================= */
