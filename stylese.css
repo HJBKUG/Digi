@@ -1186,3 +1186,280 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =========================
+   ENHANCED RESPONSIVE STYLES
+   ========================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .navbar {
+        width: 95%;
+        padding: 10px 20px;
+    }
+
+    .events-title {
+        font-size: 48px;
+    }
+
+    .events-section {
+        padding: 130px 30px 70px;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .event-card {
+        padding: 22px;
+    }
+
+    .event-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .event-image::after {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-box {
+        padding: 30px;
+    }
+
+    .contact-box h2 {
+        font-size: 36px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        width: 94%;
+        top: 10px;
+        padding: 10px 14px;
+        border-radius: 14px;
+    }
+
+    .navbar-collapse {
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(10, 20, 40, 0.95);
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .navbar-nav {
+        gap: 8px;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0 !important;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 34px !important;
+    }
+
+    /* Events */
+    .events-section {
+        padding: 120px 20px 60px;
+    }
+
+    .events-title {
+        font-size: 38px;
+        margin-bottom: 40px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .event-card {
+        padding: 20px;
+    }
+
+    .event-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .event-tagline {
+        font-size: 0.85rem;
+    }
+
+    .event-details p {
+        font-size: 0.85rem;
+    }
+
+    .event-desc {
+        font-size: 0.85rem;
+    }
+
+    .event-extra {
+        font-size: 0.8rem;
+    }
+
+    .event-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .event-image::after {
+        width: 110px;
+        height: 110px;
+    }
+
+    .event-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-section {
+        padding: 70px 20px;
+    }
+
+    .contact-box {
+        padding: 25px 20px;
+    }
+
+    .contact-box h2 {
+        font-size: 28px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    .contact-info i {
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        height: 250px !important;
+    }
+
+    /* Footer */
+    .wave-footer {
+        height: 120px;
+    }
+
+    .wave-footer .footer-content {
+        font-size: 12px;
+        padding-top: 70px;
+    }
+
+    .waves {
+        height: 100px;
+    }
+
+    /* Modal */
+    .css-modal-content {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .css-modal-close {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .events-title {
+        font-size: 30px;
+    }
+
+    .event-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .event-image::after {
+        width: 95px;
+        height: 95px;
+    }
+
+    .event-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .event-card h3 {
+        font-size: 1rem;
+    }
+
+    .event-tagline {
+        font-size: 0.8rem;
+    }
+
+    .event-details p {
+        font-size: 0.8rem;
+    }
+
+    .event-desc {
+        font-size: 0.8rem;
+    }
+
+    .event-extra {
+        font-size: 0.75rem;
+    }
+
+    .contact-box h2 {
+        font-size: 24px;
+    }
+
+    .contact-info p {
+        font-size: 13px;
+    }
+
+    iframe {
+        height: 200px !important;
+    }
+
+    .css-modal-content h2 {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .events-title {
+        font-size: 26px;
+    }
+
+    .event-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .event-image::after {
+        width: 80px;
+        height: 80px;
+    }
+
+    .event-card {
+        padding: 15px;
+    }
+
+    .event-card h3 {
+        font-size: 0.95rem;
+    }
+}

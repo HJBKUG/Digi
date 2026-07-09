@@ -1403,212 +1403,218 @@ body{
     .contact-info .bi {
         font-size: 1.1rem;
     }
+}
 
-    @media (max-width: 768px) {
-        .contact-box {
-            padding: 20px 15px;
+/* =========================
+   SMALL MOBILE DEVICES
+========================= */
+@media (max-width: 480px) {
+    .contact-box {
+        padding: 20px 15px;
+    }
+
+    .contact-info p {
+        font-size: 0.85rem;
+    }
+
+    iframe {
+        height: 240px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    /* footer */
+    footer {
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+
+    .hero-top {
+        font-size: 13px;
+    }
+
+    footer .wave {
+        background: url(../images/Webp.net-resizeimage.png);
+        width: 100%;
+        height: 100px;
+        background-size: 1000px 100px;
+        position: absolute;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    footer .wave p {
+        margin-top: 30px;
+        color: #fff;
+    }
+
+    .tribute-text h2 {
+        font-size: 26px;
+    }
+
+    footer .wave.wave1 {
+        animation: animate-wave1 10s linear infinite;
+        z-index: 108;
+        opacity: 1;
+        animation-delay: 0s;
+        bottom: 0;
+    }
+
+    .tribute-text h4 {
+        font-size: 15px;
+    }
+
+    @keyframes animate-wave1 {
+        0% {
+            background-position-x: 0;
         }
-
-        /* =========================
-           SMALL MOBILE DEVICES
-        ========================= */
-        .contact-info p {
-            font-size: 0.85rem;
+        100% {
+            background-position-x: 1000px;
         }
+    }
 
-        @media (max-width: 480px) {
-            iframe {
-                height: 240px;
-            }
+    .tribute-text p {
+        font-size: 14px;
+    }
+
+    footer .wave.wave2 {
+        animation: animate-wave2 15s linear infinite;
+        z-index: 107;
+        opacity: 0.5;
+        animation-delay: -5s;
+        bottom: 10px;
+    }
+
+    .champions-row img,
+    .guests-row img,
+    .moments-row img,
+    .tech-row img,
+    .neon-border img {
+        width: 130px;
+        height: 170px;
+    }
+
+    @keyframes animate-wave2 {
+        0% {
+            background-position-x: 0;
         }
-
-        .hero-title {
-            font-size: 32px;
+        100% {
+            background-position-x: -1000px;
         }
+    }
 
-        /* footer */
-        footer {
-            position: relative;
-            width: 100%;
-            height: 100px;
+    .instructions-container h2 {
+        font-size: 26px;
+    }
+
+    footer .wave.wave3 {
+        animation: animate-wave3 8s linear infinite;
+        z-index: 106;
+        opacity: 0.3;
+        animation-delay: 3s;
+        bottom: 5px;
+    }
+
+    .parallax-content h2 {
+        font-size: 26px;
+    }
+
+    @keyframes animate-wave3 {
+        0% {
+            background-position-x: 0;
         }
-
-        .hero-top {
-            font-size: 13px;
+        100% {
+            background-position-x: 1000px;
         }
+    }
 
-        footer .wave {
-            background: url(../images/Webp.net-resizeimage.png);
-            width: 100%;
-            height: 100px;
-            background-size: 1000px 100px;
-            position: absolute;
-            text-align: center;
+    .memorial-title {
+        font-size: 1.8rem;
+    }
+
+    footer .wave.wave4 {
+        animation: animate-wave2 18s linear infinite;
+        z-index: 105;
+        opacity: 1;
+        animation-delay: -3s;
+        bottom: 5px;
+    }
+
+    @keyframes animate-wave4 {
+        0% {
+            background-position-x: 0;
         }
-
-        .hero-subtitle {
-            font-size: 14px;
+        100% {
+            background-position-x: -1000px;
         }
+    }
 
-        footer .wave p {
-            margin-top: 30px;
-            color: #fff;
-        }
+    .footer-content {
+        overflow: hidden;
+        color: #000;
+    }
+}
 
-        .tribute-text h2 {
-            font-size: 26px;
-        }
+/* =========================
+   EXTRA SMALL MOBILE DEVICES
+========================= */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 28px;
+    }
 
-        footer .wave.wave1 {
-            animation: animate-wave1 10s linear infinite;
-            z-index: 108;
-            opacity: 1;
-            animation-delay: 0s;
-            bottom: 0;
-        }
+    .hero-top {
+        font-size: 12px;
+    }
 
-        .tribute-text h4 {
-            font-size: 15px;
-        }
+    .hero-subtitle {
+        font-size: 13px;
+    }
 
-        @keyframes animate-wave1 {
-            0% {
-                background-position-x: 0;
-            }
-            100% {
-                background-position-x: 1000px;
-            }
-        }
+    .tribute-text h2 {
+        font-size: 22px;
+    }
 
-        .tribute-text p {
-            font-size: 14px;
-        }
+    .tribute-text h4 {
+        font-size: 14px;
+    }
 
-        footer .wave.wave2 {
-            animation: animate-wave2 15s linear infinite;
-            z-index: 107;
-            opacity: 0.5;
-            animation-delay: -5s;
-            bottom: 10px;
-        }
+    .tribute-text p {
+        font-size: 13px;
+    }
 
-        .champions-row img,
-        .guests-row img,
-        .moments-row img,
-        .tech-row img,
-        .neon-border img {
-            width: 130px;
-            height: 170px;
-        }
+    .champions-row img,
+    .guests-row img,
+    .moments-row img,
+    .tech-row img,
+    .neon-border img {
+        width: 110px;
+        height: 140px;
+    }
 
-        @keyframes animate-wave2 {
-            0% {
-                background-position-x: 0;
-            }
-            100% {
-                background-position-x: -1000px;
-            }
-        }
+    .instructions-container h2 {
+        font-size: 22px;
+    }
 
-        .instructions-container h2 {
-            font-size: 26px;
-        }
+    .parallax-content h2 {
+        font-size: 22px;
+    }
 
-        footer .wave.wave3 {
-            animation: animate-wave3 8s linear infinite;
-            z-index: 106;
-            opacity: 0.3;
-            animation-delay: 3s;
-            bottom: 5px;
-        }
+    .memorial-title {
+        font-size: 1.5rem;
+    }
 
-        .parallax-content h2 {
-            font-size: 26px;
-        }
+    .team-card {
+        max-width: 260px;
+    }
 
-        @keyframes animate-wave3 {
-            0% {
-                background-position-x: 0;
-            }
-            100% {
-                background-position-x: 1000px;
-            }
-        }
-
-        .memorial-title {
-            font-size: 1.8rem;
-        }
-
-        footer .wave.wave4 {
-            animation: animate-wave2 18s linear infinite;
-            z-index: 105;
-            opacity: 1;
-            animation-delay: -3s;
-            bottom: 5px;
-        }
-
-        @keyframes animate-wave4 {
-            0% {
-                background-position-x: 0;
-            }
-            100% {
-                background-position-x: -1000px;
-            }
-        }
-
-        .footer-content {
-            overflow: hidden;
-            color: #000;
-        }
-
-        /* =========================
-           SMALL MOBILE DEVICES
-        ========================= */
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 32px;
-            }
-
-            .hero-top {
-                font-size: 13px;
-            }
-
-            .hero-subtitle {
-                font-size: 14px;
-            }
-
-            .tribute-text h2 {
-                font-size: 26px;
-            }
-
-            .tribute-text h4 {
-                font-size: 15px;
-            }
-
-            .tribute-text p {
-                font-size: 14px;
-            }
-
-            .champions-row img,
-            .guests-row img,
-            .moments-row img,
-            .tech-row img,
-            .neon-border img {
-                width: 130px;
-                height: 170px;
-            }
-
-            .instructions-container h2 {
-                font-size: 26px;
-            }
-
-            .parallax-content h2 {
-                font-size: 26px;
-            }
-
-            .memorial-title {
-                font-size: 1.8rem;
-            }
-        }
+    .team-card img {
+        height: 220px;
     }
 }

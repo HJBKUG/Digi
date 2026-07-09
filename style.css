@@ -22,6 +22,9 @@
     --purple: #7C3AED;
     --purpleGlow: rgba(124, 58, 237, .15);
 
+    /* 🩷 MAGENTA (ACCENT) */
+    --magenta: #FF5EA7;
+
     --border: rgba(37, 99, 235, .25);
 }
 
@@ -752,13 +755,15 @@ body{
 
     display: flex;
 
-    justify-content: center;
+    justify-content: space-evenly;
 
     gap: 40px;
 
     flex-wrap: wrap;
 
     margin-bottom: 45px;
+
+    align-items: center;
 
 }
 
@@ -1626,5 +1631,450 @@ body{
     .wave-footer .footer-content{
         font-size:12px;
         padding-top:80px;
+    }
+}
+
+/* =========================
+   ENHANCED RESPONSIVE STYLES
+   ========================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .navbar {
+        width: 95%;
+        padding: 10px 20px;
+    }
+
+    .hero-title {
+        font-size: 64px;
+    }
+
+    .hero-logo {
+        width: 130px;
+    }
+
+    .memorial-title {
+        font-size: 42px;
+    }
+
+    .tribute-container {
+        padding: 50px 30px;
+        gap: 40px;
+    }
+
+    .tribute-text h2 {
+        font-size: 40px;
+    }
+
+    .instructions-box {
+        padding: 50px 30px;
+    }
+
+    .instructions-box h2 {
+        font-size: 36px;
+    }
+
+    .contact-box {
+        padding: 30px;
+    }
+
+    .contact-box h2 {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .parallax-content h2 {
+        font-size: 40px;
+    }
+
+    .parallax-content p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        width: 94%;
+        top: 10px;
+        padding: 10px 14px;
+        border-radius: 14px;
+    }
+
+    .navbar-collapse {
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(10, 20, 40, 0.95);
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .navbar-nav {
+        gap: 8px;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0 !important;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 34px !important;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 120px 20px 60px;
+        min-height: 100vh;
+    }
+
+    .hero-logo {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .hero-top {
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 0 10px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+        letter-spacing: 3px;
+    }
+
+    .hero-number {
+        margin-left: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    /* Tribute */
+    .tribute {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+
+    .tribute-container {
+        padding: 30px 20px;
+        gap: 30px;
+        border-radius: 20px;
+    }
+
+    .tribute-text h2 {
+        font-size: 30px;
+    }
+
+    .tribute-text h4 {
+        font-size: 17px;
+    }
+
+    .tribute-text p {
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .tribute-image::before {
+        width: 240px;
+        height: 240px;
+    }
+
+    .tribute-image img {
+        width: 180px;
+    }
+
+    /* Champions / Guests */
+    .champions-section {
+        padding: 70px 20px;
+    }
+
+    .memorial-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .champions-row {
+        gap: 20px;
+    }
+
+    .champions-section .champions-row img {
+        width: 140px;
+        height: 180px;
+    }
+
+    .guests-section .guests-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .guests-section .guests-row img {
+        height: 160px;
+    }
+
+    /* Parallax */
+    .parallax-section {
+        height: auto;
+        padding: 80px 20px;
+        background-attachment: scroll;
+    }
+
+    .parallax-content {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .parallax-content h2 {
+        font-size: 30px;
+    }
+
+    .parallax-content p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* Instructions */
+    .instructions-section {
+        padding: 80px 20px;
+    }
+
+    .instructions-box {
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+
+    .instructions-box h2 {
+        font-size: 30px;
+    }
+
+    .instructions-box p {
+        font-size: 15px;
+    }
+
+    .instructions-btn {
+        padding: 14px 30px;
+        font-size: 16px;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+        padding: 80px 0;
+    }
+
+    .testimonial-header {
+        margin-bottom: 40px;
+        padding: 0 5%;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+    }
+
+    .testimonial-card {
+        width: 280px;
+        min-width: 280px;
+        padding: 16px;
+    }
+
+    .testimonial-card img {
+        max-width: 220px;
+    }
+
+    /* Contact */
+    .contact-section {
+        padding: 70px 20px;
+    }
+
+    .contact-box {
+        padding: 25px 20px;
+    }
+
+    .contact-box h2 {
+        font-size: 30px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    .contact-info i {
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        height: 250px !important;
+    }
+
+    /* Footer */
+    .wave-footer {
+        height: 120px;
+    }
+
+    .wave-footer .footer-content {
+        font-size: 12px;
+        padding-top: 70px;
+    }
+
+    .waves {
+        height: 100px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 15px 50px;
+    }
+
+    .hero-logo {
+        width: 80px;
+    }
+
+    .hero-top {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .hero-number {
+        margin-left: 4px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .tribute-container {
+        padding: 25px 15px;
+    }
+
+    .tribute-text h2 {
+        font-size: 26px;
+    }
+
+    .tribute-text h4 {
+        font-size: 15px;
+    }
+
+    .tribute-text p {
+        font-size: 14px;
+    }
+
+    .tribute-image::before {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tribute-image img {
+        width: 150px;
+    }
+
+    .memorial-title {
+        font-size: 1.6rem;
+    }
+
+    .champions-section .champions-row img {
+        width: 120px;
+        height: 150px;
+    }
+
+    .guests-section .guests-row img {
+        height: 130px;
+    }
+
+    .parallax-content h2 {
+        font-size: 24px;
+    }
+
+    .parallax-content p {
+        font-size: 14px;
+    }
+
+    .instructions-box h2 {
+        font-size: 24px;
+    }
+
+    .instructions-box p {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .testimonial-card {
+        width: 250px;
+        min-width: 250px;
+        padding: 12px;
+    }
+
+    .testimonial-card img {
+        max-width: 180px;
+    }
+
+    .contact-box h2 {
+        font-size: 26px;
+    }
+
+    .contact-info p {
+        font-size: 13px;
+    }
+
+    iframe {
+        height: 200px !important;
+    }
+
+    .wave-footer .footer-content {
+        font-size: 11px;
+        padding-top: 60px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .memorial-title {
+        font-size: 1.4rem;
+    }
+
+    .champions-section .champions-row img {
+        width: 100px;
+        height: 130px;
+    }
+
+    .guests-section .guests-row {
+        grid-template-columns: 1fr;
+    }
+
+    .guests-section .guests-row img {
+        height: auto;
+        max-height: 200px;
     }
 }
