@@ -501,7 +501,7 @@ body{
 
     margin-bottom: 20px;
 
-    line-height: 1;
+    line-height: 1.2;
 
     background: linear-gradient(90deg,
             #0e86c2,
@@ -768,6 +768,25 @@ body{
 }
 
 /* =========================
+   TECH CHAMPIONS — RESPONSIVE GRID
+========================= */
+
+.champions-section:not(.guests-section) .champions-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.champions-section:not(.guests-section) .champions-row img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+/* =========================
    IMAGE CARD
 ========================= */
 
@@ -838,6 +857,14 @@ body{
 
     .guests-section .guests-row img {
         height: 200px;
+    }
+
+    .champions-section:not(.guests-section) .champions-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .champions-section:not(.guests-section) .champions-row img {
+        max-width: 180px;
     }
 }
 
@@ -1813,6 +1840,18 @@ body{
         height: 180px;
     }
 
+    .champions-section:not(.guests-section) .champions-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .champions-section:not(.guests-section) .champions-row img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        aspect-ratio: 3/4;
+    }
+
     .guests-section .guests-row {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -1998,6 +2037,18 @@ body{
         height: 150px;
     }
 
+    .champions-section:not(.guests-section) .champions-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .champions-section:not(.guests-section) .champions-row img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        aspect-ratio: 3/4;
+    }
+
     .guests-section .guests-row img {
         height: 130px;
     }
@@ -2067,6 +2118,18 @@ body{
     .champions-section .champions-row img {
         width: 100px;
         height: 130px;
+    }
+
+    .champions-section:not(.guests-section) .champions-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .champions-section:not(.guests-section) .champions-row img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        aspect-ratio: 3/4;
     }
 
     .guests-section .guests-row {
