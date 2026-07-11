@@ -346,7 +346,7 @@ body{
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
-    gap: 6px 5px;
+    gap: 6px 0px;
     margin: 0;
     font-size: clamp(30px, 7.5vw, 92px);
     font-weight: 900;
@@ -1249,7 +1249,7 @@ body{
     }
 
     .hero-title {
-        gap: 4px 10px;
+        gap: 4px 3px;
     }
 
     .memorial-title {
