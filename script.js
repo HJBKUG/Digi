@@ -24,6 +24,14 @@ if (particleCanvas) {
     let particles = [];
     resizeCanvas();
 
+    window.addEventListener("resize", () => {
+        resizeCanvas();
+    });
+
+    window.addEventListener("orientationchange", () => {
+        setTimeout(resizeCanvas, 200);
+    });
+
     // Draw particles
     function drawParticles() {
         pctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
@@ -57,12 +65,20 @@ if (auroraCanvas) {
     const hero = document.querySelector(".hero");
 
     function resizeAuroraCanvas() {
-        auroraCanvas.width = window.innerWidth;
-        auroraCanvas.height = window.innerHeight;
+        auroraCanvas.width = hero.offsetWidth;
+        auroraCanvas.height = hero.offsetHeight;
     }
 
     resizeAuroraCanvas();
-    window.addEventListener("resize", resizeAuroraCanvas);
+    let auroraResizeTimer;
+    window.addEventListener("resize", () => {
+        clearTimeout(auroraResizeTimer);
+        auroraResizeTimer = setTimeout(resizeAuroraCanvas, 100);
+    });
+    window.addEventListener("orientationchange", () => {
+        clearTimeout(auroraResizeTimer);
+        setTimeout(resizeAuroraCanvas, 300);
+    });
 
     let t = 0;
 
@@ -108,6 +124,32 @@ if (auroraCanvas) {
 }
 
 /* =========================
+   GUESTS & MOMENTS DYNAMIC GALLERY
+   ========================= */
+
+const guestImages = [
+    "images/Digi 10 guest.jpg",
+    "images/Digi 8 guest.jpg",
+    "images/q3.jpg",
+    "images/q4.jpg",
+    "images/q5.jpg",
+    "images/q6.jpg",
+    "images/q7.JPG",
+    "images/q8.JPG"
+];
+
+const guestGallery = document.getElementById("guestGallery");
+if (guestGallery) {
+    guestImages.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "neon-border";
+        img.loading = "lazy";
+        guestGallery.appendChild(img);
+    });
+}
+
+/* =========================
    TECH CHAMPIONS GALLERY INTERACTION
    ========================= */
 
@@ -116,76 +158,71 @@ const images = document.querySelectorAll(".champions-section img");
 if (images.length > 0) {
     const overlay = document.getElementById("gp-overlay");
     const imgBox = document.getElementById("gp-img");
-
     const btnClose = document.getElementById("gp-close");
     const btnPrev = document.getElementById("gp-prev");
     const btnNext = document.getElementById("gp-next");
 
-    let index = 0;
+    if (!overlay || !imgBox || !btnClose || !btnPrev || !btnNext) {
+        console.warn("Gallery: lightbox elements missing from DOM");
+    } else {
+        let index = 0;
 
-    // OPEN
-    images.forEach((img, i) => {
-        img.addEventListener("click", () => {
-            index = i;
-            openGallery();
+        images.forEach((img, i) => {
+            img.addEventListener("click", () => {
+                index = i;
+                openGallery();
+            });
         });
-    });
 
-    function openGallery() {
-        overlay.classList.add("active");
-        document.body.style.overflow = "hidden";
-        showImage();
+        function openGallery() {
+            overlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+            showImage();
+        }
+
+        function showImage() {
+            imgBox.src = images[index].src;
+        }
+
+        function closeGallery() {
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        btnClose.addEventListener("click", closeGallery);
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage();
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        btnNext.addEventListener("click", nextImage);
+        btnPrev.addEventListener("click", prevImage);
+
+        document.addEventListener("keydown", (e) => {
+            if (!overlay.classList.contains("active")) return;
+            if (e.key === "Escape") closeGallery();
+            if (e.key === "ArrowRight") nextImage();
+            if (e.key === "ArrowLeft") prevImage();
+        });
+
+        let startX = 0;
+
+        overlay.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        overlay.addEventListener("touchend", (e) => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) nextImage();
+            if (endX - startX > 50) prevImage();
+        });
     }
-
-    function showImage() {
-        imgBox.src = images[index].src;
-    }
-
-    // CLOSE
-    function closeGallery() {
-        overlay.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-    btnClose.addEventListener("click", closeGallery);
-
-    // NEXT
-    function nextImage() {
-        index = (index + 1) % images.length;
-        showImage();
-    }
-
-    // PREV
-    function prevImage() {
-        index = (index - 1 + images.length) % images.length;
-        showImage();
-    }
-
-    btnNext.addEventListener("click", nextImage);
-    btnPrev.addEventListener("click", prevImage);
-
-    // KEYBOARD
-    document.addEventListener("keydown", (e) => {
-        if (!overlay.classList.contains("active")) return;
-
-        if (e.key === "Escape") closeGallery();
-        if (e.key === "ArrowRight") nextImage();
-        if (e.key === "ArrowLeft") prevImage();
-    });
-
-    // SWIPE (mobile)
-    let startX = 0;
-
-    overlay.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-    });
-
-    overlay.addEventListener("touchend", (e) => {
-        let endX = e.changedTouches[0].clientX;
-
-        if (startX - endX > 50) nextImage();
-        if (endX - startX > 50) prevImage();
-    });
 }
 
 
