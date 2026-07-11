@@ -346,7 +346,7 @@ body{
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
-    gap: 6px 18px;
+    gap: 6px 5px;
     margin: 0;
     font-size: clamp(30px, 7.5vw, 92px);
     font-weight: 900;
