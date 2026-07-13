@@ -1032,13 +1032,14 @@ body{
     }
 
     .testimonial-card {
-        width: 280px;
-        min-width: 280px;
+        width: 250px;
+        min-width: 250px;
         padding: 16px;
     }
 
     .testimonial-card img {
-        max-width: 220px;
+        width: 170px;
+        height: auto;
     }
 
     /* Contact */
@@ -1179,13 +1180,14 @@ body{
     }
 
     .testimonial-card {
-        width: 250px;
-        min-width: 250px;
+        width: 220px;
+        min-width: 220px;
         padding: 12px;
     }
 
     .testimonial-card img {
-        max-width: 180px;
+        width: 150px;
+        height: auto;
     }
 
     .contact-box h2 {
@@ -1391,15 +1393,30 @@ body{
 }
 
 .parallax-content {
+    position: relative;
+    z-index: 1;
     width: 100%;
     max-width: 1000px;
     text-align: center;
-    background: rgba(17, 20, 45, 0.8);
+    background-image: url('images/background_dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     backdrop-filter: blur(16px);
     border: 1px solid rgba(123, 74, 255, 0.2);
     border-radius: 28px;
     padding: 50px 40px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.parallax-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 20, 45, 0.75);
+    border-radius: 28px;
+    z-index: -1;
 }
 
 .parallax-content h2 {
@@ -1505,7 +1522,7 @@ body{
 
 .testimonial-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     padding: 0 8%;
 }
 
@@ -1543,8 +1560,8 @@ body{
 }
 
 .testimonial-card {
-    flex: 0 0 320px;
-    min-width: 320px;
+    flex: 0 0 300px;
+    min-width: 300px;
     background: rgba(17, 20, 45, 0.75);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(123, 74, 255, 0.18);
@@ -1561,8 +1578,7 @@ body{
 }
 
 .testimonial-card img {
-    width: 100%;
-    max-width: 240px;
+    width: 220px;
     height: auto;
     border-radius: 14px;
     display: block;
@@ -1636,81 +1652,6 @@ body{
     aspect-ratio: 16 / 10;
     height: auto;
     min-height: 250px;
-}
-
-/* =========================
-   FOOTER — WAVE STYLES
-   ========================= */
-
-.wave-footer {
-    position: relative;
-    min-height: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(180deg, #070b18, #0a0f2e);
-    overflow: hidden;
-}
-
-.waves {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 220px;
-    z-index: 1;
-}
-
-.waves svg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120%;
-    height: 100%;
-}
-
-.wave1 {
-    fill: rgba(37, 99, 235, 0.45);
-    animation: waveMove1 8s ease-in-out infinite alternate;
-}
-
-.wave2 {
-    fill: rgba(96, 165, 250, 0.30);
-    animation: waveMove2 10s ease-in-out infinite alternate;
-}
-
-.wave3 {
-    fill: rgba(37, 99, 235, 0.18);
-    animation: waveMove3 12s ease-in-out infinite alternate;
-}
-
-@keyframes waveMove1 {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-3%); }
-}
-
-@keyframes waveMove2 {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-5%); }
-}
-
-@keyframes waveMove3 {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-2%); }
-}
-
-.wave-footer::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 180px;
-    background: radial-gradient(circle at 50% 20%, rgba(96, 165, 250, 0.18), transparent 70%);
-    z-index: 2;
 }
 
 .footer-content {
@@ -1904,8 +1845,8 @@ body{
     }
 
     .testimonial-card {
-        width: 300px;
-        min-width: 300px;
+        width: 280px;
+        min-width: 280px;
     }
 
     .contact-box {
@@ -2021,3 +1962,131 @@ body{
 #gp-next:active {
     transform: scale(0.92);
 }
+/* =========================
+   ULTRA SMOOTH OCEAN FOOTER
+========================= */
+
+.wave-footer{
+    position:relative;
+    width:100%;
+    height:100px;
+    overflow:hidden;
+
+    background:linear-gradient(180deg,#050712,#0a1024);
+    border-top:1px solid rgba(96,165,250,.25);
+}
+
+/* TEXT */
+.wave-footer .footer-content{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    color:#cbdcff;
+    font-size:14px;
+
+    padding-top:50px;
+}
+
+/* WAVES WRAPPER */
+.waves{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:140px;
+    overflow:hidden;
+}
+
+/* SVG scaling */
+.waves svg{
+    position:absolute;
+    bottom:0;
+    width:200%;
+    height:100%;
+}
+
+/* BASE WAVE STYLE */
+.wave{
+    fill:rgba(59,130,246,0.35);
+    transform-origin:center;
+}
+
+/* SMOOTHER LAYERS (REAL FEEL) */
+.wave1{
+    animation:waveMove1 10s ease-in-out infinite;
+    opacity:0.45;
+}
+
+.wave2{
+    animation:waveMove2 14s ease-in-out infinite;
+    opacity:0.3;
+    fill:rgba(37,99,235,0.35);
+}
+
+.wave3{
+    animation:waveMove3 18s ease-in-out infinite;
+    opacity:0.18;
+    fill:rgba(96,165,250,0.35);
+}
+
+/* SMOOTH FLOAT + DRIFT */
+@keyframes waveMove1{
+    0%{
+        transform:translateX(0) translateY(0);
+    }
+    50%{
+        transform:translateX(-25%) translateY(-6px);
+    }
+    100%{
+        transform:translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes waveMove2{
+    0%{
+        transform:translateX(0) translateY(0);
+    }
+    50%{
+        transform:translateX(-18%) translateY(-4px);
+    }
+    100%{
+        transform:translateX(-35%) translateY(0);
+    }
+}
+
+@keyframes waveMove3{
+    0%{
+        transform:translateX(0) translateY(0);
+    }
+    50%{
+        transform:translateX(-12%) translateY(-3px);
+    }
+    100%{
+        transform:translateX(-25%) translateY(0);
+    }
+}
+
+/* SOFT WATER GLOW */
+.wave-footer::before{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:140px;
+    background:radial-gradient(circle at 50% 20%, rgba(96,165,250,0.18), transparent 70%);
+    z-index:2;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .wave-footer{
+        height:140px;
+    }
+
+    .wave-footer .footer-content{
+        font-size:12px;
+        padding-top:80px;
+    }
+}
+
