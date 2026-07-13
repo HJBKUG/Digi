@@ -950,7 +950,7 @@ body {
 
 .modal-tagline {
 
-    color: #00ff9d;
+    color: #ffffff;
 
     margin-bottom: 20px;
 
@@ -976,7 +976,7 @@ body {
 
 .modal-section h3 {
 
-    color: #00ff9d;
+    color: #7d99ff;
 
     margin-bottom: 10px;
 
@@ -1012,7 +1012,7 @@ body {
 }
 
 .css-modal-content::-webkit-scrollbar-thumb {
-    background: #00ff9d;
+    background: #0026fe;
     border-radius: 10px;
 }
 
