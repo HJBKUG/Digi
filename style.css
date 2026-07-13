@@ -28,6 +28,10 @@
     --border: rgba(37, 99, 235, .25);
 }
 
+.space{
+    width: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
